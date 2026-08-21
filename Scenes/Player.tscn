@@ -1,21 +1,247 @@
 [gd_scene format=3 uid="uid://b0m5l1fmmkeb7"]
 
 [ext_resource type="Script" uid="uid://s8p0bc8hllv7" path="res://Scenes/player.gd" id="1_kyqiw"]
-[ext_resource type="Texture2D" uid="uid://ccm0vburi2b28" path="res://icon.svg" id="1_rpqav"]
+[ext_resource type="Texture2D" uid="uid://bvnran3t5wobq" path="res://Sprites/Player_Sprites/idle_anim_up.png" id="2_gntrk"]
+[ext_resource type="Texture2D" uid="uid://csmsoo7xpj80n" path="res://Sprites/Player_Sprites/idle_anim_down.png" id="3_gntrk"]
+[ext_resource type="Texture2D" uid="uid://c4biad8o8crfp" path="res://Sprites/Player_Sprites/idle_anim_left.png" id="4_5ixxa"]
+[ext_resource type="Texture2D" uid="uid://c728elftex73q" path="res://Sprites/Player_Sprites/idle_anim_right.png" id="5_nn08x"]
+[ext_resource type="Texture2D" uid="uid://diwrk01o4sk35" path="res://Sprites/Player_Sprites/walk_anim_down.png" id="6_nn08x"]
+[ext_resource type="Texture2D" uid="uid://bskbttr6pfqgw" path="res://Sprites/Player_Sprites/walk_anim_up.png" id="7_52ee3"]
+[ext_resource type="Texture2D" uid="uid://c5bxy4axtb2cl" path="res://Sprites/Player_Sprites/walk_anim_left.png" id="8_bhhdu"]
+[ext_resource type="Texture2D" uid="uid://c3v5yjy60sg61" path="res://Sprites/Player_Sprites/walk_anim_right.png" id="9_megsn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(20, 10)
 
-[node name="Player" type="CharacterBody2D" unique_id=525732701]
+[sub_resource type="Animation" id="Animation_kyqiw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("idle_down:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 35)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("idle_left:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 35)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("idle_up:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(-1, 0, 16, 33)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("idle_right:region_rect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 15, 34)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("walk_down:region_rect")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 34)]
+}
+
+[sub_resource type="Animation" id="Animation_gntrk"]
+resource_name = "idle_down"
+length = 0.53333336
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("idle_down:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 35), Rect2(16, 0, 16, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_52ee3"]
+resource_name = "idle_left"
+length = 0.53333336
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("idle_left:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 35), Rect2(16, 0, 16, 35)]
+}
+
+[sub_resource type="Animation" id="Animation_bhhdu"]
+resource_name = "idle_right"
+length = 0.5333366944823414
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("idle_right:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 15, 34), Rect2(16, 0, 15, 34)]
+}
+
+[sub_resource type="Animation" id="Animation_5ixxa"]
+resource_name = "idle_up"
+length = 0.5333366944823414
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("idle_up:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 33), Rect2(16, 0, 16, 33)]
+}
+
+[sub_resource type="Animation" id="Animation_megsn"]
+resource_name = "walk_down"
+length = 0.40000335419513283
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("walk_down:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.03333333, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(16, 0, 16, 34), Rect2(32, 0, 16, 34)]
+}
+
+[sub_resource type="Animation" id="Animation_yoq75"]
+resource_name = "walk_left"
+
+[sub_resource type="Animation" id="Animation_ksbbd"]
+resource_name = "walk_right"
+
+[sub_resource type="Animation" id="Animation_glx4g"]
+resource_name = "walk_up"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dewec"]
+_data = {
+&"RESET": SubResource("Animation_kyqiw"),
+&"idle_down": SubResource("Animation_gntrk"),
+&"idle_left": SubResource("Animation_52ee3"),
+&"idle_right": SubResource("Animation_bhhdu"),
+&"idle_up": SubResource("Animation_5ixxa"),
+&"walk_down": SubResource("Animation_megsn"),
+&"walk_left": SubResource("Animation_yoq75"),
+&"walk_right": SubResource("Animation_ksbbd"),
+&"walk_up": SubResource("Animation_glx4g")
+}
+
+[node name="Player" type="CharacterBody2D" unique_id=525732701 node_paths=PackedStringArray("animationPlayer")]
 script = ExtResource("1_kyqiw")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=346459327]
-position = Vector2(-3.5762787e-07, -5.9604645e-07)
-scale = Vector2(0.15625001, 0.15624999)
-texture = ExtResource("1_rpqav")
+animationPlayer = NodePath("Visuals/AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1671164280]
+position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_g4v7s")
 debug_color = Color(0.74990696, 0.4365992, 0.4004326, 0.41960785)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=955038116]
 zoom = Vector2(3, 3)
+
+[node name="Visuals" type="Node2D" parent="." unique_id=1856464462]
+
+[node name="idle_down" type="Sprite2D" parent="Visuals" unique_id=117793975]
+texture = ExtResource("3_gntrk")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 35)
+
+[node name="idle_up" type="Sprite2D" parent="Visuals" unique_id=1007424343]
+visible = false
+position = Vector2(1.5, 1)
+scale = Vector2(1, 0.99999994)
+texture = ExtResource("2_gntrk")
+region_enabled = true
+region_rect = Rect2(-1, 0, 16, 33)
+
+[node name="idle_left" type="Sprite2D" parent="Visuals" unique_id=1466486913]
+visible = false
+texture = ExtResource("4_5ixxa")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 35)
+
+[node name="idle_right" type="Sprite2D" parent="Visuals" unique_id=1926396802]
+visible = false
+position = Vector2(0.5, 0.56)
+texture = ExtResource("5_nn08x")
+region_enabled = true
+region_rect = Rect2(0, 0, 15, 34)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Visuals" unique_id=2026717604]
+libraries/ = SubResource("AnimationLibrary_dewec")
+autoplay = &"idle_down"
+
+[node name="walk_down" type="Sprite2D" parent="Visuals" unique_id=254160003]
+visible = false
+position = Vector2(0, 0.5)
+texture = ExtResource("6_nn08x")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 34)
+
+[node name="walk_up" type="Sprite2D" parent="Visuals" unique_id=437577180]
+visible = false
+texture = ExtResource("7_52ee3")
+
+[node name="walk_left" type="Sprite2D" parent="Visuals" unique_id=1192460683]
+visible = false
+texture = ExtResource("8_bhhdu")
+
+[node name="walk_right" type="Sprite2D" parent="Visuals" unique_id=1220053687]
+visible = false
+texture = ExtResource("9_megsn")
