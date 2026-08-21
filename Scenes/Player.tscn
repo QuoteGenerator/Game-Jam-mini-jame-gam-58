@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://s8p0bc8hllv7" path="res://Scenes/player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://bvnran3t5wobq" path="res://Sprites/Player_Sprites/idle_anim_up.png" id="2_gntrk"]
+[ext_resource type="Texture2D" uid="uid://bcy8rs4wa13us" path="res://Sprites/shadow_circle.png" id="2_yoq75"]
 [ext_resource type="Texture2D" uid="uid://csmsoo7xpj80n" path="res://Sprites/Player_Sprites/idle_anim_down.png" id="3_gntrk"]
 [ext_resource type="Texture2D" uid="uid://c4biad8o8crfp" path="res://Sprites/Player_Sprites/idle_anim_left.png" id="4_5ixxa"]
 [ext_resource type="Texture2D" uid="uid://c728elftex73q" path="res://Sprites/Player_Sprites/idle_anim_right.png" id="5_nn08x"]
@@ -182,7 +183,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_megsn"]
 resource_name = "walk_down"
-length = 0.40000335419513283
+length = 0.4000033541951328
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -199,7 +200,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_yoq75"]
 resource_name = "walk_left"
-length = 0.40000335419513283
+length = 0.4000033541951328
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -216,7 +217,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ksbbd"]
 resource_name = "walk_right"
-length = 0.40000335419513283
+length = 0.4000033541951328
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -233,7 +234,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_glx4g"]
 resource_name = "walk_up"
-length = 0.40000335419513283
+length = 0.4000033541951328
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -272,6 +273,12 @@ debug_color = Color(0.74990696, 0.4365992, 0.4004326, 0.41960785)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=955038116]
 zoom = Vector2(3, 3)
+
+[node name="shadow" type="Sprite2D" parent="." unique_id=1315932928]
+modulate = Color(1, 1, 1, 0.40392157)
+position = Vector2(1, 14)
+scale = Vector2(0.065, 0.065)
+texture = ExtResource("2_yoq75")
 
 [node name="Visuals" type="Node2D" parent="." unique_id=1856464462]
 
