@@ -1,15 +1,21 @@
 [gd_scene format=3 uid="uid://b0m5l1fmmkeb7"]
 
+[ext_resource type="Script" uid="uid://s8p0bc8hllv7" path="res://Scenes/player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://ccm0vburi2b28" path="res://icon.svg" id="1_rpqav"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 
-[node name="Player" type="Node2D" unique_id=1029264991]
+[node name="Player" type="CharacterBody2D" unique_id=525732701]
+script = ExtResource("1_kyqiw")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1619745062]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=346459327]
+position = Vector2(-3.5762787e-07, -5.9604645e-07)
+scale = Vector2(0.15625001, 0.15624999)
 texture = ExtResource("1_rpqav")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1289824146]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=97229621]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1671164280]
 shape = SubResource("RectangleShape2D_g4v7s")
+debug_color = Color(0.74990696, 0.4365992, 0.4004326, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=955038116]
+zoom = Vector2(3, 3)
