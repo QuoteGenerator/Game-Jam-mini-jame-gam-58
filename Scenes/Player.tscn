@@ -75,6 +75,42 @@ tracks/4/keys = {
 "update": 0,
 "values": [Rect2(0, 0, 16, 34)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("walk_up:region_rect")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 34)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("walk_left:region_rect")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 34)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("walk_right:region_rect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 34)]
+}
 
 [sub_resource type="Animation" id="Animation_gntrk"]
 resource_name = "idle_down"
@@ -155,7 +191,7 @@ tracks/0/path = NodePath("walk_down:region_rect")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.03333333, 0.2),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Rect2(16, 0, 16, 34), Rect2(32, 0, 16, 34)]
@@ -163,12 +199,54 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_yoq75"]
 resource_name = "walk_left"
+length = 0.40000335419513283
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("walk_left:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 34), Rect2(16, 0, 16, 34), Rect2(32, 0, 16, 34)]
+}
 
 [sub_resource type="Animation" id="Animation_ksbbd"]
 resource_name = "walk_right"
+length = 0.40000335419513283
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("walk_right:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 34), Rect2(16, 0, 16, 34), Rect2(32, 0, 16, 34)]
+}
 
 [sub_resource type="Animation" id="Animation_glx4g"]
 resource_name = "walk_up"
+length = 0.40000335419513283
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("walk_up:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.20000002),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 34), Rect2(32, 0, 16, 34)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dewec"]
 _data = {
@@ -198,6 +276,7 @@ zoom = Vector2(3, 3)
 [node name="Visuals" type="Node2D" parent="." unique_id=1856464462]
 
 [node name="idle_down" type="Sprite2D" parent="Visuals" unique_id=117793975]
+visible = false
 texture = ExtResource("3_gntrk")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 35)
@@ -236,12 +315,20 @@ region_rect = Rect2(0, 0, 16, 34)
 
 [node name="walk_up" type="Sprite2D" parent="Visuals" unique_id=437577180]
 visible = false
+position = Vector2(2.425, 0.445)
 texture = ExtResource("7_52ee3")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 34)
 
 [node name="walk_left" type="Sprite2D" parent="Visuals" unique_id=1192460683]
 visible = false
+position = Vector2(1, 0)
 texture = ExtResource("8_bhhdu")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 34)
 
 [node name="walk_right" type="Sprite2D" parent="Visuals" unique_id=1220053687]
-visible = false
+position = Vector2(0, 0.5)
 texture = ExtResource("9_megsn")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 34)
