@@ -16,6 +16,8 @@ var timer_running = false
 var goingDirection = "down"
 var attacking = false
 
+var kills = 0
+
 var speed = 70
 
 var time = 5
