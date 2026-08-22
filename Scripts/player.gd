@@ -8,7 +8,9 @@ var health = 100
 var goingDirection = "down"
 var attacking = false
 
-var speed = 50
+var speed = 70
+
+var can_take_damage = true
 
 
 func _ready() -> void:
@@ -54,8 +56,8 @@ func _physics_process(delta: float) -> void:
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 
-		if collider is Slime:
-			health -= 0
+		if collider is Slime and can_take_damage:
+			take_damage(10)
 
 	# Animation nur wenn wir nicht angreifen
 	update_animation()
@@ -123,6 +125,38 @@ func check_sword_hit() -> void:
 			body.hit_flash()
 
 			print("SLIME GETROFFEN! HP: ", body.health)
+
+
+func take_damage(amount: int) -> void:
+	if not can_take_damage:
+		return
+
+	# Unverwundbar machen
+	can_take_damage = false
+
+	# Schaden
+	health -= amount
+
+	print("PLAYER GETROFFEN! HP: ", health)
+
+	# Player rot färben
+	for child in $Visuals.get_children():
+		if child is Sprite2D:
+			child.modulate = Color(1, 0.2, 0.2)
+
+	# Kurz rot bleiben
+	await get_tree().create_timer(0.1).timeout
+
+	# Wieder normale Farbe
+	for child in $Visuals.get_children():
+		if child is Sprite2D:
+			child.modulate = Color.WHITE
+
+	# 1 Sekunde unverwundbar
+	await get_tree().create_timer(0.9).timeout
+
+	# Wieder Schaden bekommen können
+	can_take_damage = true
 
 
 func update_sword_hitbox() -> void:

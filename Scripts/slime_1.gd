@@ -2,7 +2,7 @@ class_name Slime
 extends CharacterBody2D
 
 @export var animationPlayer: AnimationPlayer
-@export var speed := 50.0
+@export var speed := 30.0
 
 var health := 20
 
