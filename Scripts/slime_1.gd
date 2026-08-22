@@ -12,6 +12,7 @@ var goingDirection := "down"
 
 func _physics_process(delta: float) -> void:
 	if health <= 0:
+		target.time_left += 3
 		queue_free()
 		return
 

@@ -1,14 +1,19 @@
 extends CharacterBody2D
 
+@export var time_label: Label
+
 @export var animationPlayer: AnimationPlayer
 @export var sword_hitbox: Area2D
 
 var health = 100
+var time_left = 300.0 # 5 Minuten
 
 var goingDirection = "down"
 var attacking = false
 
 var speed = 70
+
+var time = 5
 
 var can_take_damage = true
 
@@ -19,8 +24,11 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if health <= 0:
+	time_left -= delta
+	if health <= 0 or time_left <= 0:
 		get_tree().change_scene_to_file("res://Scenes/StarterArea.tscn")
+	
+	update_time_label()
 
 
 func _physics_process(delta: float) -> void:
@@ -172,3 +180,13 @@ func update_sword_hitbox() -> void:
 
 		"right":
 			sword_hitbox.position = Vector2(20, 0)
+
+func update_time_label() -> void:
+	var total_seconds := int(time_left)
+
+	var minutes := total_seconds / 60
+	var seconds := total_seconds % 60
+
+	var milliseconds := int((time_left - int(time_left)) * 100)
+
+	time_label.text = "Time: %02d:%02d:%02d" % [minutes, seconds, milliseconds]

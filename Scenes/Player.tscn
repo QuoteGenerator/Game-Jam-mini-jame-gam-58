@@ -501,10 +501,11 @@ _data = {
 &"walk_up": SubResource("Animation_glx4g")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=525732701 node_paths=PackedStringArray("animationPlayer", "sword_hitbox")]
+[node name="Player" type="CharacterBody2D" unique_id=525732701 node_paths=PackedStringArray("time_label", "animationPlayer", "sword_hitbox")]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_kyqiw")
+time_label = NodePath("Control/Label")
 animationPlayer = NodePath("Visuals/AnimationPlayer")
 sword_hitbox = NodePath("swordHitBox")
 
@@ -612,3 +613,18 @@ visible = false
 texture = ExtResource("14_arntx")
 region_enabled = true
 region_rect = Rect2(31, 0, 64, 34)
+
+[node name="Control" type="Control" parent="." unique_id=406625002]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -213.0
+offset_top = -121.0
+offset_right = 212.0
+offset_bottom = 121.0
+
+[node name="Label" type="Label" parent="Control" unique_id=1213576484]
+layout_mode = 0
+offset_right = 425.0
+offset_bottom = 242.0
+text = "Time: 5:00:00"
+horizontal_alignment = 1
