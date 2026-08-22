@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://ccm0vburi2b28" path="res://icon.svg" id="2_gl6un"]
 [ext_resource type="Texture2D" uid="uid://c4tev3wxt8ih" path="res://Sprites/grass_background.png" id="3_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://bmbtutrd3vb87" path="res://Scenes/rock.tscn" id="5_b2bpf"]
-[ext_resource type="PackedScene" uid="uid://csb7r3vmf7q4s" path="res://Scenes/begin_trees_left.tscn" id="6_7lihs"]
 
 [node name="Game" type="Node2D" unique_id=688634170]
 
@@ -37,6 +36,3 @@ scale = Vector2(1, -1)
 visible = false
 position = Vector2(158, 53)
 texture = ExtResource("2_gl6un")
-
-[node name="StaticBody2D" parent="." unique_id=44347837 instance=ExtResource("6_7lihs")]
-position = Vector2(-176, -11)
