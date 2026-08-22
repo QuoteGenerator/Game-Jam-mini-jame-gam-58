@@ -4,7 +4,11 @@ extends CharacterBody2D
 
 @export var animationPlayer: AnimationPlayer
 @export var sword_hitbox: Area2D
+@onready var hp_bar: ColorRect = $CanvasLayer/HP_Bar
 
+var max_hp_scale_x: float
+
+var max_health = 100
 var health = 100
 var time_left = 300.0 # 5 Minuten
 var timer_running = false
@@ -23,6 +27,7 @@ func _ready() -> void:
 	# SwordHitbox ist am Anfang aus
 	#time_label.hide()
 	sword_hitbox.monitoring = false
+	max_hp_scale_x = hp_bar.scale.x
 
 
 func _process(delta: float) -> void:
@@ -147,7 +152,9 @@ func take_damage(amount: int) -> void:
 
 	# Schaden
 	health -= amount
-
+	health = max(health, 0)
+	
+	hp_bar.scale.x = max_hp_scale_x * (float(health) / max_health)
 	print("PLAYER GETROFFEN! HP: ", health)
 
 	# Player rot färben

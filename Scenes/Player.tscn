@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://s8p0bc8hllv7" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://bvnran3t5wobq" path="res://Sprites/Player_Sprites/idle_anim_up.png" id="2_gntrk"]
+[ext_resource type="Texture2D" uid="uid://raf1ut0gdjai" path="res://Sprites/Player_Sprites/player_hpbar.png" id="2_o3h8g"]
 [ext_resource type="Texture2D" uid="uid://csmsoo7xpj80n" path="res://Sprites/Player_Sprites/idle_anim_down.png" id="3_gntrk"]
 [ext_resource type="Texture2D" uid="uid://c4biad8o8crfp" path="res://Sprites/Player_Sprites/idle_anim_left.png" id="4_5ixxa"]
 [ext_resource type="Texture2D" uid="uid://c728elftex73q" path="res://Sprites/Player_Sprites/idle_anim_right.png" id="5_nn08x"]
@@ -539,6 +540,22 @@ scale = Vector2(2.29, 2.29)
 size_flags_vertical = 1
 text = "Time: 5:00:00"
 horizontal_alignment = 1
+
+[node name="HP_Bar" type="ColorRect" parent="CanvasLayer" unique_id=1331878760]
+offset_left = 26.999998
+offset_top = 19.999998
+offset_right = 67.0
+offset_bottom = 60.0
+scale = Vector2(9.851078, 0.83556306)
+color = Color(0.9520363, 0.3245469, 0.26823023, 1)
+
+[node name="HP_Overlay" type="TextureRect" parent="CanvasLayer" unique_id=1284434776]
+offset_right = 170.0
+offset_bottom = 16.0
+scale = Vector2(2.47, 2.47)
+pivot_offset = Vector2(-10.27, -11.52)
+texture = ExtResource("2_o3h8g")
+stretch_mode = 2
 
 [node name="swordHitBox" type="Area2D" parent="." unique_id=2078082643]
 collision_layer = 0
