@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bomgcwigoayj5" path="res://Sprites/FightingArea_Sprites/fighting_area.png" id="1_j0vbj"]
 [ext_resource type="PackedScene" uid="uid://b0m5l1fmmkeb7" path="res://Scenes/Player.tscn" id="2_g6k0t"]
+[ext_resource type="Script" uid="uid://bys071f8gcdw" path="res://Scripts/spawner.gd" id="3_g6k0t"]
+[ext_resource type="PackedScene" uid="uid://bhhm5d4lcyc8o" path="res://Scenes/slime_1.tscn" id="4_eeui5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 radius = 34.0
@@ -59,3 +61,7 @@ shape = SubResource("CapsuleShape2D_d0u6y")
 [node name="Bottom_Right_Side" type="CollisionShape2D" parent="Boundaries" unique_id=526344009]
 position = Vector2(37, 502)
 shape = SubResource("CapsuleShape2D_d0u6y")
+
+[node name="Spawner" type="Node2D" parent="." unique_id=888068626]
+script = ExtResource("3_g6k0t")
+slime_scene = ExtResource("4_eeui5")

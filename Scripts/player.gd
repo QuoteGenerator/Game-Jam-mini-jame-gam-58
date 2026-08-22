@@ -1,6 +1,8 @@
 extends CharacterBody2D
 @export var animationPlayer: AnimationPlayer
 
+var health = 100
+
 var goingDirection = "down"
 var attacking = false
 var attackingFinished = true
@@ -8,6 +10,10 @@ var attackingFinished = true
 var speed = 50
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if health <= 0:
+		get_tree().change_scene_to_file("res://Scenes/StarterArea.tscn")
+
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
 	
@@ -33,6 +39,14 @@ func _physics_process(delta: float) -> void:
 		attack()
 	
 	move_and_slide()
+	
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+
+		if collider.is_in_group("slime"):
+			health -= 10
+	
 	update_animation()
 
 
