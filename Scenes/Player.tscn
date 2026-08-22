@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://s8p0bc8hllv7" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://bvnran3t5wobq" path="res://Sprites/Player_Sprites/idle_anim_up.png" id="2_gntrk"]
-[ext_resource type="Texture2D" uid="uid://bcy8rs4wa13us" path="res://Sprites/shadow_circle.png" id="2_yoq75"]
 [ext_resource type="Texture2D" uid="uid://csmsoo7xpj80n" path="res://Sprites/Player_Sprites/idle_anim_down.png" id="3_gntrk"]
 [ext_resource type="Texture2D" uid="uid://c4biad8o8crfp" path="res://Sprites/Player_Sprites/idle_anim_left.png" id="4_5ixxa"]
 [ext_resource type="Texture2D" uid="uid://c728elftex73q" path="res://Sprites/Player_Sprites/idle_anim_right.png" id="5_nn08x"]
@@ -11,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://c5bxy4axtb2cl" path="res://Sprites/Player_Sprites/walk_anim_left.png" id="8_bhhdu"]
 [ext_resource type="Texture2D" uid="uid://c3v5yjy60sg61" path="res://Sprites/Player_Sprites/walk_anim_right.png" id="9_megsn"]
 [ext_resource type="Texture2D" uid="uid://cjxikvfp6f7cp" path="res://Sprites/Player_Sprites/sword_anim_down.png" id="11_ksbbd"]
+[ext_resource type="Texture2D" uid="uid://dpgs7q05oaqs1" path="res://Sprites/Player_Sprites/sword_anim_up.png" id="12_o3h8g"]
+[ext_resource type="Texture2D" uid="uid://bya4kgbsdqyig" path="res://Sprites/Player_Sprites/sword_anim_left.png" id="13_1e7my"]
+[ext_resource type="Texture2D" uid="uid://bt3w7rxsgevg5" path="res://Sprites/Player_Sprites/sword_anim_right.png" id="14_arntx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b2bpf"]
 radius = 6.0
@@ -126,6 +128,42 @@ tracks/8/keys = {
 "update": 0,
 "values": [Rect2(55, 1, 15, 31)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("sword_up:region_rect")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(224, 0, 64, 51)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("sword_left:region_rect")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(96, 0, 64, 34)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("sword_right:region_rect")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(31, 0, 64, 34)]
+}
 
 [sub_resource type="Animation" id="Animation_gntrk"]
 resource_name = "idle_down"
@@ -197,7 +235,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_miouo"]
 resource_name = "sword_down"
-length = 0.43333334
+length = 0.36666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -205,7 +243,7 @@ tracks/0/path = NodePath("sword_down:region_rect")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.23333333, 0.33333334),
+"times": PackedFloat32Array(0, 0.13333334, 0.2, 0.26666668),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Rect2(55, 1, 15, 31), Rect2(119, 1, 15, 31), Rect2(171.5, 1, 37.625, 31), Rect2(236, -12.63, 37.625, 58.28)]
@@ -213,12 +251,51 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_o3h8g"]
 resource_name = "sword_left"
+length = 0.36666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sword_left:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.23333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(224, 0, 64, 34), Rect2(95, 0, 64, 34), Rect2(160, 0, 64, 34)]
+}
 
 [sub_resource type="Animation" id="Animation_1e7my"]
 resource_name = "sword_right"
+length = 0.3666700191233307
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sword_right:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.23333335),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(31, 0, 64, 34), Rect2(95, 0, 64, 34), Rect2(159, 0, 64, 34)]
+}
 
 [sub_resource type="Animation" id="Animation_arntx"]
 resource_name = "sword_up"
+length = 0.36666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sword_up:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.16666667, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(224, 0, 64, 51), Rect2(160, 0, 64, 51), Rect2(96, 0, 64, 51), Rect2(32, 0, 64, 51)]
+}
 
 [sub_resource type="Animation" id="Animation_megsn"]
 resource_name = "walk_down"
@@ -318,15 +395,10 @@ debug_color = Color(0.74990696, 0.4365992, 0.4004326, 0.41960785)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=955038116]
 zoom = Vector2(3, 3)
 
-[node name="shadow" type="Sprite2D" parent="." unique_id=1315932928]
-modulate = Color(1, 1, 1, 0.40392157)
-position = Vector2(1, 14)
-scale = Vector2(0.065, 0.065)
-texture = ExtResource("2_yoq75")
-
 [node name="Visuals" type="Node2D" parent="." unique_id=1856464462]
 
 [node name="idle_down" type="Sprite2D" parent="Visuals" unique_id=117793975]
+visible = false
 texture = ExtResource("3_gntrk")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 35)
@@ -346,7 +418,6 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 35)
 
 [node name="idle_right" type="Sprite2D" parent="Visuals" unique_id=1926396802]
-visible = false
 position = Vector2(0.5, 0.56)
 texture = ExtResource("5_nn08x")
 region_enabled = true
@@ -393,9 +464,19 @@ region_rect = Rect2(55, 1, 15, 31)
 
 [node name="sword_up" type="Sprite2D" parent="Visuals" unique_id=258201970]
 visible = false
+position = Vector2(2.5, -5.1)
+texture = ExtResource("12_o3h8g")
+region_enabled = true
+region_rect = Rect2(224, 0, 64, 51)
 
 [node name="sword_left" type="Sprite2D" parent="Visuals" unique_id=933921894]
 visible = false
+texture = ExtResource("13_1e7my")
+region_enabled = true
+region_rect = Rect2(96, 0, 64, 34)
 
 [node name="sword_right" type="Sprite2D" parent="Visuals" unique_id=279353766]
 visible = false
+texture = ExtResource("14_arntx")
+region_enabled = true
+region_rect = Rect2(31, 0, 64, 34)
