@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://4moyaedrshej"]
+
+[ext_resource type="Script" uid="uid://c7wr78ii6vvbd" path="res://Scripts/dialoguebox_2.gd" id="1_dhnpf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gngh"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="FontFile" id="FontFile_yf5fn"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/34/0/ascent = 0.0
+cache/0/34/0/descent = 0.0
+cache/0/34/0/underline_position = 0.0
+cache/0/34/0/underline_thickness = 0.0
+cache/0/34/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_57qmd"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/34/0/ascent = 0.0
+cache/0/34/0/descent = 0.0
+cache/0/34/0/underline_position = 0.0
+cache/0/34/0/underline_thickness = 0.0
+cache/0/34/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_d0u6y"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/34/0/ascent = 0.0
+cache/0/34/0/descent = 0.0
+cache/0/34/0/underline_position = 0.0
+cache/0/34/0/underline_thickness = 0.0
+cache/0/34/0/scale = 1.0
+
+[node name="Textbox" type="CanvasLayer" unique_id=1368686350]
+script = ExtResource("1_dhnpf")
+
+[node name="SfxRetroMultiplev1" type="AudioStreamPlayer" parent="." unique_id=896633466]
+
+[node name="TextboxContainer" type="MarginContainer" parent="." unique_id=1881389443]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 71.0
+offset_top = -181.0
+offset_right = 69.57471
+offset_bottom = 36.540222
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.87, 0.87)
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Panel" type="Panel" parent="TextboxContainer" unique_id=1974044399]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3gngh")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextboxContainer" unique_id=1775739292]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Panel" type="Panel" parent="TextboxContainer/MarginContainer" unique_id=2044061555]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/MarginContainer" unique_id=1774408499]
+layout_mode = 2
+
+[node name="StartSymbol" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer" unique_id=541620277]
+custom_minimum_size = Vector2(7, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = SubResource("FontFile_yf5fn")
+theme_override_font_sizes/font_size = 34
+text = "*"
+
+[node name="Label" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer" unique_id=1733155221]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = SubResource("FontFile_57qmd")
+theme_override_font_sizes/font_size = 34
+text = "Placeholder"
+autowrap_mode = 3
+clip_text = true
+
+[node name="EndSymbol" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer" unique_id=1284164978]
+layout_mode = 2
+size_flags_vertical = 8
+offset_transform_enabled = true
+theme_override_fonts/font = SubResource("FontFile_d0u6y")
+theme_override_font_sizes/font_size = 34
+text = "V"
+
+[connection signal="dialogue2_finished" from="." to="." method="_on_dialogue_2_finished"]
