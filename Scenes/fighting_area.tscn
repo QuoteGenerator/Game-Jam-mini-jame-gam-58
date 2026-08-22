@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://ddupqevaqm6my"]
+
+[ext_resource type="Texture2D" uid="uid://bomgcwigoayj5" path="res://Sprites/FightingArea_Sprites/fighting_area.png" id="1_j0vbj"]
+[ext_resource type="PackedScene" uid="uid://b0m5l1fmmkeb7" path="res://Scenes/Player.tscn" id="2_g6k0t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
+radius = 34.0
+height = 1064.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf5fn"]
+radius = 45.0
+height = 1014.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_57qmd"]
+radius = 18.0
+height = 480.00006
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d0u6y"]
+height = 94.0
+
+[node name="FightingArea" type="Node2D" unique_id=1529102488]
+
+[node name="FightingArea" type="Sprite2D" parent="." unique_id=225800565]
+position = Vector2(0, 1)
+texture = ExtResource("1_j0vbj")
+
+[node name="Player" parent="." unique_id=525732701 instance=ExtResource("2_g6k0t")]
+position = Vector2(-49, 63)
+
+[node name="Boundaries" type="StaticBody2D" parent="." unique_id=208472465]
+
+[node name="Left" type="CollisionShape2D" parent="Boundaries" unique_id=1779516587]
+position = Vector2(-483, 0)
+shape = SubResource("CapsuleShape2D_g4v7s")
+
+[node name="Right" type="CollisionShape2D" parent="Boundaries" unique_id=1515066493]
+position = Vector2(482, 0)
+shape = SubResource("CapsuleShape2D_g4v7s")
+
+[node name="Top" type="CollisionShape2D" parent="Boundaries" unique_id=364470099]
+position = Vector2(15, -488)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_yf5fn")
+
+[node name="Bottom_Left" type="CollisionShape2D" parent="Boundaries" unique_id=1845704818]
+position = Vector2(-270, 466)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_57qmd")
+
+[node name="Bottom_Right" type="CollisionShape2D" parent="Boundaries" unique_id=1327526920]
+position = Vector2(266, 466)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_57qmd")
+
+[node name="Bottom_Left_Side" type="CollisionShape2D" parent="Boundaries" unique_id=94580493]
+position = Vector2(-41, 502)
+shape = SubResource("CapsuleShape2D_d0u6y")
+
+[node name="Bottom_Right_Side" type="CollisionShape2D" parent="Boundaries" unique_id=526344009]
+position = Vector2(37, 502)
+shape = SubResource("CapsuleShape2D_d0u6y")

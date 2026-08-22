@@ -5,7 +5,7 @@ var goingDirection = "down"
 var attacking = false
 var attackingFinished = true
 
-var speed = 40
+var speed = 50
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
