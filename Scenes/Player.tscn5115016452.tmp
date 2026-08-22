@@ -167,18 +167,6 @@ tracks/11/keys = {
 "update": 0,
 "values": [Rect2(31, 0, 64, 34)]
 }
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("../swordHitBox:monitoring")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="Animation" id="Animation_gntrk"]
 resource_name = "idle_down"
@@ -263,36 +251,10 @@ tracks/0/keys = {
 "update": 0,
 "values": [Rect2(55, 1, 15, 31), Rect2(119, 1, 15, 31), Rect2(171.5, 1, 37.625, 31), Rect2(236, -12.63, 37.625, 58.28)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../swordHitBox:monitoring")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.2, 0.36666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("..")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.23333333),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"check_sword_hit"
-}]
-}
 
 [sub_resource type="Animation" id="Animation_o3h8g"]
 resource_name = "sword_left"
-length = 0.4
+length = 0.36666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -304,32 +266,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Rect2(224, 0, 64, 34), Rect2(95, 0, 64, 34), Rect2(160, 0, 64, 34)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../swordHitBox:monitoring")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.16666667, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("..")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"check_sword_hit"
-}]
 }
 
 [sub_resource type="Animation" id="Animation_1e7my"]
@@ -347,32 +283,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Rect2(31, 0, 64, 34), Rect2(95, 0, 64, 34), Rect2(159, 0, 64, 34)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../swordHitBox:monitoring")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.2, 0.36667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("..")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.23333333),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"check_sword_hit"
-}]
-}
 
 [sub_resource type="Animation" id="Animation_arntx"]
 resource_name = "sword_up"
@@ -388,32 +298,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Rect2(224, 0, 64, 51), Rect2(160, 0, 64, 51), Rect2(96, 0, 64, 51), Rect2(32, 0, 64, 51)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../swordHitBox:monitoring")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.2, 0.36666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("..")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.23333333),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"check_sword_hit"
-}]
 }
 
 [sub_resource type="Animation" id="Animation_megsn"]
@@ -502,8 +386,6 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=525732701 node_paths=PackedStringArray("animationPlayer", "sword_hitbox")]
-collision_layer = 3
-collision_mask = 3
 script = ExtResource("1_kyqiw")
 animationPlayer = NodePath("Visuals/AnimationPlayer")
 sword_hitbox = NodePath("swordHitBox")
@@ -519,12 +401,12 @@ debug_color = Color(0.74990696, 0.4365992, 0.4004326, 0.41960785)
 zoom = Vector2(3, 3)
 
 [node name="swordHitBox" type="Area2D" parent="." unique_id=2078082643]
-collision_layer = 0
-collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="swordHitBox" unique_id=135295277]
-scale = Vector2(1.5, 1.5)
+light_mask = 2
+position = Vector2(18, 3)
 shape = SubResource("CircleShape2D_yf5fn")
+disabled = true
 
 [node name="Visuals" type="Node2D" parent="." unique_id=1856464462]
 
@@ -549,7 +431,6 @@ region_enabled = true
 region_rect = Rect2(0, 0, 16, 35)
 
 [node name="idle_right" type="Sprite2D" parent="Visuals" unique_id=1926396802]
-visible = false
 position = Vector2(0.5, 0.56)
 texture = ExtResource("5_nn08x")
 region_enabled = true
