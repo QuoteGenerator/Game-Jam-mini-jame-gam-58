@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://djaki6qdn4adu"]
 
 [ext_resource type="PackedScene" uid="uid://b0m5l1fmmkeb7" path="res://Scenes/Player.tscn" id="1_iukft"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://cg62q1o2yb753" path="res://Sprites/BeginArea_Sprites/begin_ground.png" id="1_kldst"]
 [ext_resource type="Texture2D" uid="uid://c4tev3wxt8ih" path="res://Sprites/grass_background.png" id="3_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://bmbtutrd3vb87" path="res://Scenes/rock.tscn" id="5_b2bpf"]
@@ -9,15 +10,39 @@
 load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
 
 [node name="Game" type="Node2D" unique_id=688634170]
+=======
+[ext_resource type="Texture2D" uid="uid://dmwd33yn37tk4" path="res://Sprites/BeginArea_Sprites/starter_area.png" id="2_b2bpf"]
+[ext_resource type="Texture2D" uid="uid://ccm0vburi2b28" path="res://icon.svg" id="2_gl6un"]
+[ext_resource type="Texture2D" uid="uid://c4tev3wxt8ih" path="res://Sprites/grass_background.png" id="3_j5yw3"]
+[ext_resource type="PackedScene" uid="uid://bmbtutrd3vb87" path="res://Scenes/rock.tscn" id="5_b2bpf"]
 
-[node name="BeginGround" type="Sprite2D" parent="." unique_id=605880521]
-position = Vector2(3, -10)
-texture = ExtResource("1_kldst")
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
+radius = 38.0
+height = 588.0
+>>>>>>> Stashed changes
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf5fn"]
+radius = 42.0
+height = 590.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_57qmd"]
+radius = 24.0
+height = 186.00002
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d0u6y"]
+radius = 39.0
+height = 454.0
+
+[node name="Game" type="Node2D" unique_id=688634170]
 
 [node name="GrassBackground" type="Sprite2D" parent="." unique_id=1512478108]
 visible = false
 position = Vector2(-6, -6)
 texture = ExtResource("3_j5yw3")
+
+[node name="StarterArea" type="Sprite2D" parent="." unique_id=1480145492]
+position = Vector2(10, -39)
+texture = ExtResource("2_b2bpf")
 
 [node name="Rock1" parent="." unique_id=162347175 instance=ExtResource("5_b2bpf")]
 position = Vector2(-148, -61)
@@ -37,4 +62,41 @@ scale = Vector2(1, -1)
 [node name="Icon" type="Sprite2D" parent="." unique_id=534190568]
 visible = false
 position = Vector2(158, 53)
+<<<<<<< Updated upstream
 texture = SubResource("CompressedTexture2D_kldst")
+=======
+texture = ExtResource("2_gl6un")
+
+[node name="Collisions" type="StaticBody2D" parent="." unique_id=2038533554]
+
+[node name="Left" type="CollisionShape2D" parent="Collisions" unique_id=332784883]
+position = Vector2(-210, -35)
+shape = SubResource("CapsuleShape2D_g4v7s")
+
+[node name="Right" type="CollisionShape2D" parent="Collisions" unique_id=673344806]
+position = Vector2(233, -34)
+shape = SubResource("CapsuleShape2D_yf5fn")
+
+[node name="Top_Left" type="CollisionShape2D" parent="Collisions" unique_id=469570136]
+position = Vector2(-108, -222)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_57qmd")
+
+[node name="Top_Right" type="CollisionShape2D" parent="Collisions" unique_id=1275145060]
+position = Vector2(130, -222)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_57qmd")
+
+[node name="Bottom" type="CollisionShape2D" parent="Collisions" unique_id=1380748855]
+position = Vector2(3, 182)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_d0u6y")
+
+[node name="House1" type="CollisionPolygon2D" parent="Collisions" unique_id=1482656589]
+position = Vector2(-102, 39)
+polygon = PackedVector2Array(40, 16, 0, 0, -40, 18, -40, 18, -43, 23, -43, 89, -40, 92, -40, 104, 43, 104, 43, 92, 45, 88, 44, 23)
+
+[node name="House2" type="CollisionPolygon2D" parent="Collisions" unique_id=1914789204]
+position = Vector2(14, 61)
+polygon = PackedVector2Array(40, 16, 0, 0, -40, 18, -40, 18, -43, 23, -43, 89, -40, 92, -40, 104, 43, 104, 43, 92, 45, 88, 44, 23)
+>>>>>>> Stashed changes
