@@ -211,6 +211,15 @@ tracks/0/keys = {
 "values": [Rect2(55, 1, 15, 31), Rect2(119, 1, 15, 31), Rect2(171.5, 1, 37.625, 31), Rect2(236, -12.63, 37.625, 58.28)]
 }
 
+[sub_resource type="Animation" id="Animation_o3h8g"]
+resource_name = "sword_left"
+
+[sub_resource type="Animation" id="Animation_1e7my"]
+resource_name = "sword_right"
+
+[sub_resource type="Animation" id="Animation_arntx"]
+resource_name = "sword_up"
+
 [sub_resource type="Animation" id="Animation_megsn"]
 resource_name = "walk_down"
 length = 0.4000033541951328
@@ -287,6 +296,9 @@ _data = {
 &"idle_right": SubResource("Animation_bhhdu"),
 &"idle_up": SubResource("Animation_5ixxa"),
 &"sword_down": SubResource("Animation_miouo"),
+&"sword_left": SubResource("Animation_o3h8g"),
+&"sword_right": SubResource("Animation_1e7my"),
+&"sword_up": SubResource("Animation_arntx"),
 &"walk_down": SubResource("Animation_megsn"),
 &"walk_left": SubResource("Animation_yoq75"),
 &"walk_right": SubResource("Animation_ksbbd"),
