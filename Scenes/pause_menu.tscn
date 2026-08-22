@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://ykcejkk5hwej"]
+
+[ext_resource type="Script" uid="uid://chv1rkel7uwgr" path="res://pause_menu.gd" id="1_myy0f"]
+[ext_resource type="Texture2D" uid="uid://cxvtcharv46tw" path="res://Sprites/Buttons/resume_up.png" id="2_sjs17"]
+[ext_resource type="Texture2D" uid="uid://cqnq4aq3fdj4n" path="res://Sprites/Buttons/resume_down.png" id="3_u8tnp"]
+[ext_resource type="Texture2D" uid="uid://bqwcvk4qrknsr" path="res://Sprites/Buttons/shop_up.png" id="4_stj27"]
+[ext_resource type="Texture2D" uid="uid://div38speb7p80" path="res://Sprites/Buttons/shop_down.png" id="5_ix48p"]
+[ext_resource type="Texture2D" uid="uid://dabdtidkm8qcg" path="res://Sprites/Buttons/restart_up.png" id="6_524vl"]
+[ext_resource type="Texture2D" uid="uid://dhhhheb2y20vm" path="res://Sprites/Buttons/restart_down.png" id="7_sjs17"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g4v7s"]
+texture = ExtResource("2_sjs17")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yf5fn"]
+texture = ExtResource("3_u8tnp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_57qmd"]
+texture = ExtResource("2_sjs17")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d0u6y"]
+texture = ExtResource("4_stj27")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fcnqv"]
+texture = ExtResource("5_ix48p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7numd"]
+texture = ExtResource("4_stj27")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p1u0y"]
+texture = ExtResource("6_524vl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5s0fj"]
+texture = ExtResource("7_sjs17")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_33x8s"]
+texture = ExtResource("6_524vl")
+
+[node name="PauseMenu" type="Control" unique_id=790691493]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_myy0f")
+
+[node name="Resume" type="Button" parent="." unique_id=2111053980]
+z_index = 5
+layout_mode = 0
+offset_left = -30.0
+offset_right = 30.5
+offset_bottom = 22.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_g4v7s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yf5fn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_57qmd")
+
+[node name="Shop" type="Button" parent="." unique_id=1753525109]
+z_index = 5
+layout_mode = 0
+offset_left = -30.0
+offset_top = 27.0
+offset_right = 30.5
+offset_bottom = 49.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_d0u6y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fcnqv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7numd")
+
+[node name="Restart" type="Button" parent="." unique_id=1947090426]
+z_index = 5
+layout_mode = 0
+offset_left = -30.0
+offset_top = 54.0
+offset_right = 30.5
+offset_bottom = 76.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_p1u0y")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5s0fj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_33x8s")
+
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

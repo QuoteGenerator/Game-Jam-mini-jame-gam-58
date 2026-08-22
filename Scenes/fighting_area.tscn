@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://ddupqevaqm6my"]
 
 [ext_resource type="Texture2D" uid="uid://bomgcwigoayj5" path="res://Sprites/FightingArea_Sprites/fighting_area.png" id="1_j0vbj"]
-[ext_resource type="Script" uid="uid://hh0765md7rlu" path="res://Scenes/fighting_area.gd" id="1_oixwp"]
+[ext_resource type="Script" uid="uid://hh0765md7rlu" path="res://Scripts/fighting_area.gd" id="1_oixwp"]
 [ext_resource type="PackedScene" uid="uid://b0m5l1fmmkeb7" path="res://Scenes/Player.tscn" id="2_g6k0t"]
 [ext_resource type="Script" uid="uid://bys071f8gcdw" path="res://Scripts/spawner.gd" id="3_g6k0t"]
 [ext_resource type="PackedScene" uid="uid://bhhm5d4lcyc8o" path="res://Scenes/slime_1.tscn" id="4_eeui5"]
+[ext_resource type="PackedScene" uid="uid://ykcejkk5hwej" path="res://Scenes/pause_menu.tscn" id="4_yxstt"]
 [ext_resource type="Texture2D" uid="uid://by3ni7q61m13q" path="res://Sprites/FightingArea_Sprites/tree_border_fightingarea.png" id="6_2wd46"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
@@ -34,6 +35,9 @@ texture = ExtResource("1_j0vbj")
 
 [node name="Player" parent="." unique_id=525732701 instance=ExtResource("2_g6k0t")]
 position = Vector2(-4, 474)
+
+[node name="PauseMenu" parent="Player" unique_id=790691493 instance=ExtResource("4_yxstt")]
+visible = false
 
 [node name="Camera" type="Camera2D" parent="Player" unique_id=480596617]
 zoom = Vector2(3, 3)

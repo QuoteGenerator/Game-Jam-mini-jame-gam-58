@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://2w0uunhu7yjx" path="res://Scenes/Dialogues/dialoguebox1.tscn" id="7_4had1"]
 [ext_resource type="PackedScene" uid="uid://4moyaedrshej" path="res://Scenes/Dialogues/dialoguebox2.tscn" id="7_52qe1"]
 [ext_resource type="PackedScene" uid="uid://kvte3fyv51su" path="res://Scenes/Dialogues/dialoguebox3.tscn" id="8_00ekk"]
+[ext_resource type="PackedScene" uid="uid://ykcejkk5hwej" path="res://Scenes/pause_menu.tscn" id="9_08fnt"]
 [ext_resource type="PackedScene" uid="uid://lpemascaflha" path="res://Scenes/npc_2.tscn" id="9_knngp"]
 [ext_resource type="PackedScene" uid="uid://dxerodxy3y6p8" path="res://Scenes/npc_3.tscn" id="11_8h603"]
 
@@ -95,6 +96,11 @@ limit_left = -220
 limit_top = -270
 limit_right = 232
 limit_bottom = 195
+
+[node name="PauseMenu" parent="Player" unique_id=790691493 instance=ExtResource("9_08fnt")]
+visible = false
+offset_top = -40.0
+offset_bottom = -40.0
 
 [node name="SceneSwitch" type="Area2D" parent="." unique_id=97653065]
 
