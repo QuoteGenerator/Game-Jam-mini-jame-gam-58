@@ -502,6 +502,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=525732701 node_paths=PackedStringArray("animationPlayer", "sword_hitbox")]
+z_index = 1
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_kyqiw")
