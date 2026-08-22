@@ -2,9 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://b0m5l1fmmkeb7" path="res://Scenes/Player.tscn" id="1_iukft"]
 [ext_resource type="Texture2D" uid="uid://cg62q1o2yb753" path="res://Sprites/BeginArea_Sprites/begin_ground.png" id="1_kldst"]
-[ext_resource type="Texture2D" uid="uid://ccm0vburi2b28" path="res://icon.svg" id="2_gl6un"]
 [ext_resource type="Texture2D" uid="uid://c4tev3wxt8ih" path="res://Sprites/grass_background.png" id="3_j5yw3"]
 [ext_resource type="PackedScene" uid="uid://bmbtutrd3vb87" path="res://Scenes/rock.tscn" id="5_b2bpf"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kldst"]
+load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
 
 [node name="Game" type="Node2D" unique_id=688634170]
 
@@ -35,4 +37,4 @@ scale = Vector2(1, -1)
 [node name="Icon" type="Sprite2D" parent="." unique_id=534190568]
 visible = false
 position = Vector2(158, 53)
-texture = ExtResource("2_gl6un")
+texture = SubResource("CompressedTexture2D_kldst")

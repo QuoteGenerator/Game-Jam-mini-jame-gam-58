@@ -2,6 +2,8 @@ extends CharacterBody2D
 @export var animationPlayer: AnimationPlayer
 
 var goingDirection = "down"
+var attacking = false
+var attackingFinished = true
 
 var speed = 20
 
@@ -22,26 +24,43 @@ func _physics_process(delta: float) -> void:
 		goingDirection = "down"
 		direction.y = 1
 		
+
+		
 	velocity = direction * speed
+	
+	# Angriff
+	if Input.is_action_just_pressed("attack"):
+		attack()
 	
 	move_and_slide()
 	update_animation()
 
 
 func update_animation() -> void:
-
-
+	
 	
 	for child in $Visuals.get_children():
 		if child is Sprite2D:
 			child.visible = false
 
-	if velocity == Vector2.ZERO:
-		var idle_visual = get_node("Visuals/idle_" + goingDirection)
-		animationPlayer.play("idle_" + goingDirection)
-		idle_visual.visible = true
-	else:
-		var idle_visual = get_node("Visuals/walk_" + goingDirection)
-		animationPlayer.play("walk_" + goingDirection)
-		idle_visual.visible = true
+	if attacking == false:
+		if velocity == Vector2.ZERO:
+			var idle_visual = get_node("Visuals/idle_" + goingDirection)
+			animationPlayer.play("idle_" + goingDirection)
+			idle_visual.visible = true
+		else:
+			var idle_visual = get_node("Visuals/walk_" + goingDirection)
+			animationPlayer.play("walk_" + goingDirection)
+			idle_visual.visible = true
+
+
 		
+func attack() -> void:
+	attacking = true
+	var idle_visual = get_node("Visuals/sword_" + goingDirection)
+	animationPlayer.play("sword_" + goingDirection)
+	idle_visual.visible = true
+	
+	await animationPlayer.animation_finished
+	
+	attacking = false
