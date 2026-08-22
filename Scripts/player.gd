@@ -7,6 +7,7 @@ extends CharacterBody2D
 
 var health = 100
 var time_left = 300.0 # 5 Minuten
+var timer_running = false
 
 var goingDirection = "down"
 var attacking = false
@@ -20,11 +21,13 @@ var can_take_damage = true
 
 func _ready() -> void:
 	# SwordHitbox ist am Anfang aus
+	#time_label.hide()
 	sword_hitbox.monitoring = false
 
 
 func _process(delta: float) -> void:
-	time_left -= delta
+	if timer_running:
+		time_left -= delta
 	if health <= 0 or time_left <= 0:
 		get_tree().change_scene_to_file("res://Scenes/StarterArea.tscn")
 	

@@ -506,7 +506,7 @@ z_index = 1
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_kyqiw")
-time_label = NodePath("Control/Label")
+time_label = NodePath("CanvasLayer/Label")
 animationPlayer = NodePath("Visuals/AnimationPlayer")
 sword_hitbox = NodePath("swordHitBox")
 
@@ -520,6 +520,25 @@ debug_color = Color(0.74990696, 0.4365992, 0.4004326, 0.41960785)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=955038116]
 zoom = Vector2(3, 3)
+limit_left = -500
+limit_top = -520
+limit_right = 500
+limit_bottom = 525
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1207045792]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1213576484]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -232.0
+offset_right = -32.0
+offset_bottom = 23.0
+grow_horizontal = 2
+scale = Vector2(2.29, 2.29)
+size_flags_vertical = 1
+text = "Time: 5:00:00"
+horizontal_alignment = 1
 
 [node name="swordHitBox" type="Area2D" parent="." unique_id=2078082643]
 collision_layer = 0
@@ -614,18 +633,3 @@ visible = false
 texture = ExtResource("14_arntx")
 region_enabled = true
 region_rect = Rect2(31, 0, 64, 34)
-
-[node name="Control" type="Control" parent="." unique_id=406625002]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -213.0
-offset_top = -121.0
-offset_right = 212.0
-offset_bottom = 121.0
-
-[node name="Label" type="Label" parent="Control" unique_id=1213576484]
-layout_mode = 0
-offset_right = 425.0
-offset_bottom = 242.0
-text = "Time: 5:00:00"
-horizontal_alignment = 1
