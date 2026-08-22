@@ -1,6 +1,83 @@
 [gd_scene format=3 uid="uid://cp16hom2vi3f8"]
 
-[node name="MainMenu" type="Control" unique_id=1506933119]
+[ext_resource type="Script" uid="uid://b5wrvxbqfx1mi" path="res://Scenes/main_menu.gd" id="1_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://blfb8fln5dcv1" path="res://Sprites/Buttons/play_up.png" id="1_48xlc"]
+[ext_resource type="Texture2D" uid="uid://cxgqkmhilhedu" path="res://Sprites/Buttons/play_down.png" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://8amirdiv8qst" path="res://Sprites/MainMenu_Sprites/mainmenubg.png" id="2_trj04"]
+[ext_resource type="Texture2D" uid="uid://cg8ad1kbjn8sp" path="res://Sprites/MainMenu_Sprites/slime_king.png" id="2_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://tkdqffxbcxp6" path="res://Sprites/MainMenu_Sprites/chronos.png" id="3_trj04"]
+[ext_resource type="Texture2D" uid="uid://liokyxm7iys3" path="res://Sprites/MainMenu_Sprites/chronoquestlogo.png" id="4_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://h3hb8ah1owk1" path="res://Sprites/MainMenu_Sprites/menusprite1.png" id="5_opfnp"]
+[ext_resource type="Texture2D" uid="uid://12a2q24s8523" path="res://Sprites/MainMenu_Sprites/menusprite2.png" id="6_cp0ys"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g4v7s"]
+texture = ExtResource("1_48xlc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d0u6y"]
+texture = ExtResource("2_1ehe0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_48xlc"]
+texture = ExtResource("1_48xlc")
+
+[sub_resource type="Animation" id="Animation_1ehe0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ce3w2"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n45e2"]
+_data = {
+&"RESET": SubResource("Animation_1ehe0"),
+&"fade_in": SubResource("Animation_ce3w2")
+}
+
+[node name="MainMenu" type="Node2D" unique_id=2123291676]
+script = ExtResource("1_1ehe0")
+
+[node name="Mainmenubg" type="Sprite2D" parent="." unique_id=428273264]
+position = Vector2(-2, -11)
+scale = Vector2(0.84841627, 0.84841627)
+texture = ExtResource("2_trj04")
+
+[node name="SlimeKing" type="Sprite2D" parent="." unique_id=44342670]
+visible = false
+position = Vector2(97, -36)
+rotation = 0.16523387
+scale = Vector2(1.154669, 1.154669)
+texture = ExtResource("2_yhxw7")
+
+[node name="Chronos" type="Sprite2D" parent="." unique_id=618639223]
+visible = false
+position = Vector2(-98.00001, -37)
+rotation = -0.26170257
+scale = Vector2(2.043892, 2.0438921)
+texture = ExtResource("3_trj04")
+
+[node name="Button_Manager" type="Control" parent="." unique_id=1506933119]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -8,7 +85,50 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1456030303]
+[node name="Start" type="Button" parent="Button_Manager" unique_id=90584803]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -30.0
+offset_top = 21.0
+offset_right = 30.5
+offset_bottom = 43.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_g4v7s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_d0u6y")
+theme_override_styles/hover = SubResource("StyleBoxTexture_48xlc")
+
+[node name="Chronoquestlogo" type="Sprite2D" parent="." unique_id=338528598]
+position = Vector2(0, -31)
+texture = ExtResource("4_ce3w2")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1931311505]
+zoom = Vector2(4.465, 4.465)
+limit_left = -500
+limit_top = -520
+limit_right = 500
+limit_bottom = 525
+
+[node name="Timer" type="Timer" parent="." unique_id=628313047]
+wait_time = 1.5
+one_shot = true
+
+[node name="Player" type="Sprite2D" parent="." unique_id=1466096553]
+position = Vector2(-76, 35)
+scale = Vector2(2.0781252, 2.0781252)
+texture = ExtResource("5_opfnp")
+
+[node name="Slime" type="Sprite2D" parent="." unique_id=23365606]
+position = Vector2(68, 33)
+scale = Vector2(2.5576923, 2.5576923)
+texture = ExtResource("6_cp0ys")
+
+[node name="fade_screen" type="ColorRect" parent="." unique_id=964637050]
+offset_left = -144.0
+offset_top = -84.0
+offset_right = 148.0
+offset_bottom = 83.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fade_screen" unique_id=1143767955]
+libraries/ = SubResource("AnimationLibrary_n45e2")
+
+[connection signal="pressed" from="Button_Manager/Start" to="." method="_on_start_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
