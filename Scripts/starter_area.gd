@@ -2,17 +2,24 @@ extends Node2D
 
 @onready var dialogue1: DialogueBox1 = $dialogue1
 @onready var dialogue2: DialogueBox2 = $dialogue2
+@onready var dialogue3: DialogueBox3 = $dialogue3
 @onready var player: CharacterBody2D = $Player
+@onready var starter_cam: Camera2D = $Player/StarterCam
+
 
 var dialogue1_open = false
 var dialogue2_open = false
+var dialogue3_open = false
 var npc1_entered = false
 var npc2_entered = false
+var npc3_entered = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	starter_cam.make_current()
 	dialogue1.dialogue1_finished.connect(_on_dialogue1_finished)
 	dialogue2.dialogue2_finished.connect(_on_dialogue2_finished)
+	dialogue3.dialogue3_finished.connect(_on_dialogue3_finished)
 	#dialogue1.queue_text("hello") #queue any text
 	pass
 
@@ -21,6 +28,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	run_dialogue1()
 	run_dialogue2()
+	run_dialogue3()
 
 func _on_area_2d_body_entered(body: Node2D) -> void: #npc1
 	if body.name != "Player":
@@ -39,11 +47,23 @@ func _on_npc_2_range_body_entered(body: Node2D) -> void:
 		return
 
 	npc2_entered = true
-	print("npc1 entered")
+	print("npc2 entered")
 	print(body.name)
 	
 func _on_npc_2_range_body_exited(body: Node2D) -> void:
 	npc2_entered = false
+	
+func _on_npc_3_range_body_entered(body: Node2D) -> void:
+	if body.name != "Player":
+		return
+
+	npc3_entered = true
+	print("npc3 entered")
+	print(body.name)
+
+
+func _on_npc_3_range_body_exited(body: Node2D) -> void:
+	npc3_entered = false
 
 func _on_dialogue1_finished():
 	dialogue1.hide()
@@ -55,11 +75,17 @@ func _on_dialogue2_finished():
 	dialogue2_open = false
 	player.set_physics_process(true)
 	
+func _on_dialogue3_finished():
+	dialogue3.hide()
+	dialogue3_open = false
+	player.set_physics_process(true)
+	
 func run_dialogue1():
 	if Input.is_action_just_pressed("Interact") and npc1_entered and not dialogue1_open:
 		player.set_physics_process(false)
 		dialogue1_open = true
 		dialogue1.show()
+		
 		dialogue1.queue_text("hello im npc 1!")
 		dialogue1.queue_text("it is nice to meet u :D")
 
@@ -68,5 +94,15 @@ func run_dialogue2():
 		player.set_physics_process(false)
 		dialogue2_open = true
 		dialogue2.show()
+		
 		dialogue2.queue_text("hello im npc 2!")
 		dialogue2.queue_text("dont mind me, im just sitting here.")
+
+func run_dialogue3():
+	if Input.is_action_just_pressed("Interact") and npc3_entered and not dialogue3_open:
+		player.set_physics_process(false)
+		dialogue3_open = true
+		dialogue3.show()
+		
+		dialogue3.queue_text("hello im npc 3!")
+		dialogue3.queue_text("i like this rock.")

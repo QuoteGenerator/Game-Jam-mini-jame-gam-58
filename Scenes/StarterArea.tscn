@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://c678oub5y65m8" path="res://Scenes/npc_1.tscn" id="6_vxmu0"]
 [ext_resource type="PackedScene" uid="uid://2w0uunhu7yjx" path="res://Scenes/Dialogues/dialoguebox1.tscn" id="7_4had1"]
 [ext_resource type="PackedScene" uid="uid://4moyaedrshej" path="res://Scenes/Dialogues/dialoguebox2.tscn" id="7_52qe1"]
+[ext_resource type="PackedScene" uid="uid://kvte3fyv51su" path="res://Scenes/Dialogues/dialoguebox3.tscn" id="8_00ekk"]
 [ext_resource type="PackedScene" uid="uid://lpemascaflha" path="res://Scenes/npc_2.tscn" id="9_knngp"]
+[ext_resource type="PackedScene" uid="uid://dxerodxy3y6p8" path="res://Scenes/npc_3.tscn" id="11_8h603"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 23.194826
@@ -55,6 +57,14 @@ position = Vector2(149, -157)
 rotation = 3.1415927
 scale = Vector2(1, -1)
 
+[node name="NPC3" parent="." unique_id=263907074 instance=ExtResource("11_8h603")]
+position = Vector2(148, -159)
+
+[node name="NPC3_Range" type="Area2D" parent="NPC3" unique_id=182933505]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC3/NPC3_Range" unique_id=28428357]
+shape = SubResource("CircleShape2D_g4v7s")
+
 [node name="NPC2" parent="." unique_id=1125528410 instance=ExtResource("9_knngp")]
 position = Vector2(-40, -200)
 
@@ -64,9 +74,26 @@ position = Vector2(-40, -200)
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_g4v7s")
 
+[node name="NPC1" parent="." unique_id=2119426330 instance=ExtResource("6_vxmu0")]
+position = Vector2(-119, -37)
+
+[node name="NPC1_Range" type="Area2D" parent="NPC1" unique_id=1502319896]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC1/NPC1_Range" unique_id=12584431]
+shape = SubResource("CircleShape2D_g4v7s")
+
 [node name="Player" parent="." unique_id=525732701 instance=ExtResource("4_4had1")]
 light_mask = 3
 visibility_layer = 3
+
+[node name="StarterCam" type="Camera2D" parent="Player" unique_id=1686018754]
+visible = false
+position = Vector2(0, -43)
+zoom = Vector2(2.45, 2.45)
+limit_left = -220
+limit_top = -270
+limit_right = 232
+limit_bottom = 195
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=534190568]
 visible = false
@@ -114,19 +141,17 @@ polygon = PackedVector2Array(-6, 0, -40, 18, -44, 23, -43, 88, -40, 91, -40, 105
 position = Vector2(10, 66)
 polygon = PackedVector2Array(-6, 0, -40, 18, -44, 23, -43, 88, -40, 91, -40, 105, 41, 105, 41, 91, 44, 88, 45, 20, 40, 16, 8, 0)
 
-[node name="NPC1" parent="." unique_id=2119426330 instance=ExtResource("6_vxmu0")]
-position = Vector2(-119, -37)
+[node name="dialogue3" parent="." unique_id=1368686350 instance=ExtResource("8_00ekk")]
+visible = false
 
-[node name="NPC1_Range" type="Area2D" parent="NPC1" unique_id=1502319896]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC1/NPC1_Range" unique_id=12584431]
-shape = SubResource("CircleShape2D_g4v7s")
-
-[node name="dialogue2" parent="." unique_id=1368686350 instance=ExtResource("7_52qe1")]
+[node name="dialogue2" parent="." unique_id=1546461420 instance=ExtResource("7_52qe1")]
+visible = false
 
 [node name="dialogue1" parent="." unique_id=311474565 instance=ExtResource("7_4had1")]
 visible = false
 
+[connection signal="body_entered" from="NPC3/NPC3_Range" to="." method="_on_npc_3_range_body_entered"]
+[connection signal="body_exited" from="NPC3/NPC3_Range" to="." method="_on_npc_3_range_body_exited"]
 [connection signal="body_entered" from="NPC2/NPC2_Range" to="." method="_on_npc_2_range_body_entered"]
 [connection signal="body_exited" from="NPC2/NPC2_Range" to="." method="_on_npc_2_range_body_exited"]
 [connection signal="body_entered" from="NPC1/NPC1_Range" to="." method="_on_area_2d_body_entered"]
