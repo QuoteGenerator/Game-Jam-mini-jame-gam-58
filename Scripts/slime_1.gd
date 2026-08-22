@@ -18,6 +18,7 @@ var is_dashing := false
 func _ready() -> void:
 	if target.kills > 40:
 		modulate = Color.BLACK
+		health = 20
 	elif target.kills >= 25:
 		health = 40
 		speed = 50
