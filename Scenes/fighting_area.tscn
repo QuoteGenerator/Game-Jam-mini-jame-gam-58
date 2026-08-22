@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ddupqevaqm6my"]
 
 [ext_resource type="Texture2D" uid="uid://bomgcwigoayj5" path="res://Sprites/FightingArea_Sprites/fighting_area.png" id="1_j0vbj"]
+[ext_resource type="Script" uid="uid://hh0765md7rlu" path="res://Scenes/fighting_area.gd" id="1_oixwp"]
 [ext_resource type="PackedScene" uid="uid://b0m5l1fmmkeb7" path="res://Scenes/Player.tscn" id="2_g6k0t"]
 [ext_resource type="Script" uid="uid://bys071f8gcdw" path="res://Scripts/spawner.gd" id="3_g6k0t"]
 [ext_resource type="PackedScene" uid="uid://bhhm5d4lcyc8o" path="res://Scenes/slime_1.tscn" id="4_eeui5"]
@@ -20,14 +21,25 @@ height = 480.00006
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d0u6y"]
 height = 94.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(55.5, 11.5)
+
 [node name="FightingArea" type="Node2D" unique_id=1529102488]
+script = ExtResource("1_oixwp")
 
 [node name="FightingArea" type="Sprite2D" parent="." unique_id=225800565]
 position = Vector2(0, 1)
 texture = ExtResource("1_j0vbj")
 
 [node name="Player" parent="." unique_id=525732701 instance=ExtResource("2_g6k0t")]
-position = Vector2(-49, 63)
+position = Vector2(-4, 474)
+
+[node name="Camera" type="Camera2D" parent="Player" unique_id=480596617]
+zoom = Vector2(3, 3)
+limit_left = -500
+limit_top = -520
+limit_right = 500
+limit_bottom = 525
 
 [node name="Boundaries" type="StaticBody2D" parent="." unique_id=208472465]
 
@@ -61,6 +73,10 @@ shape = SubResource("CapsuleShape2D_d0u6y")
 [node name="Bottom_Right_Side" type="CollisionShape2D" parent="Boundaries" unique_id=526344009]
 position = Vector2(37, 502)
 shape = SubResource("CapsuleShape2D_d0u6y")
+
+[node name="Bottom_Middle" type="CollisionShape2D" parent="Boundaries" unique_id=1631115676]
+position = Vector2(-1.75, 509)
+shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Spawner" type="Node2D" parent="." unique_id=888068626]
 script = ExtResource("3_g6k0t")

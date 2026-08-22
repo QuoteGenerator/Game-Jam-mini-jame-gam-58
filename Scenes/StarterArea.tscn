@@ -15,7 +15,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 23.194826
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kldst"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcnqv"]
+size = Vector2(56, 20)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 radius = 43.0
@@ -95,10 +96,11 @@ limit_top = -270
 limit_right = 232
 limit_bottom = 195
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=534190568]
-visible = false
-position = Vector2(158, 53)
-texture = SubResource("CompressedTexture2D_kldst")
+[node name="SceneSwitch" type="Area2D" parent="." unique_id=97653065]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneSwitch" unique_id=1182084236]
+position = Vector2(6, -244)
+shape = SubResource("RectangleShape2D_fcnqv")
 
 [node name="Collisions" type="StaticBody2D" parent="." unique_id=1816406391]
 
@@ -156,3 +158,4 @@ visible = false
 [connection signal="body_exited" from="NPC2/NPC2_Range" to="." method="_on_npc_2_range_body_exited"]
 [connection signal="body_entered" from="NPC1/NPC1_Range" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="NPC1/NPC1_Range" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="SceneSwitch" to="." method="_on_scene_switch_body_entered"]
