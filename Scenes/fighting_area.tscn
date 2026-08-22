@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b0m5l1fmmkeb7" path="res://Scenes/Player.tscn" id="2_g6k0t"]
 [ext_resource type="Script" uid="uid://bys071f8gcdw" path="res://Scripts/spawner.gd" id="3_g6k0t"]
 [ext_resource type="PackedScene" uid="uid://bhhm5d4lcyc8o" path="res://Scenes/slime_1.tscn" id="4_eeui5"]
+[ext_resource type="Texture2D" uid="uid://by3ni7q61m13q" path="res://Sprites/FightingArea_Sprites/tree_border_fightingarea.png" id="6_2wd46"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 radius = 34.0
@@ -82,3 +83,8 @@ shape = SubResource("RectangleShape2D_g4v7s")
 [node name="Spawner" type="Node2D" parent="." unique_id=888068626]
 script = ExtResource("3_g6k0t")
 slime_scene = ExtResource("4_eeui5")
+
+[node name="TreeBorderFightingarea" type="Sprite2D" parent="." unique_id=2058758622]
+z_index = 237
+position = Vector2(0, 1)
+texture = ExtResource("6_2wd46")
