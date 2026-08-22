@@ -6,10 +6,12 @@ extends Node2D
 @onready var player: CharacterBody2D = $Player
 @onready var starter_cam: Camera2D = $Player/StarterCam
 
+var scene_switch = false
 
 var dialogue1_open = false
 var dialogue2_open = false
 var dialogue3_open = false
+
 var npc1_entered = false
 var npc2_entered = false
 var npc3_entered = false
@@ -106,3 +108,11 @@ func run_dialogue3():
 		
 		dialogue3.queue_text("hello im npc 3!")
 		dialogue3.queue_text("i like this rock.")
+
+
+func _on_scene_switch_body_entered(body: Node2D) -> void:
+	if body.name != "Player":
+		return
+	
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/fighting_area.tscn")
+	#get_tree().change_scene_to_file("res://Scenes/fighting_area.tscn")
