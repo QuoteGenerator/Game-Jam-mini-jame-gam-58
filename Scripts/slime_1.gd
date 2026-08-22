@@ -9,10 +9,18 @@ var health := 20
 var target: CharacterBody2D
 var goingDirection := "down"
 
+func _ready() -> void:
+	if target.kills > 20:
+		health = 30
+	if target.kills > 50:
+		health = 40
+	if target.kills > 80:
+		health = 50
 
 func _physics_process(delta: float) -> void:
 	if health <= 0:
 		target.time_left += 3
+		target.kills += 1
 		queue_free()
 		return
 
