@@ -39,9 +39,10 @@ func _physics_process(delta: float) -> void:
 func update_animation() -> void:
 	
 	
-	for child in $Visuals.get_children():
-		if child is Sprite2D:
-			child.visible = false
+	if attacking == false:
+		for child in $Visuals.get_children():
+			if child is Sprite2D:
+				child.visible = false
 
 	if attacking == false:
 		if velocity == Vector2.ZERO:
@@ -57,6 +58,11 @@ func update_animation() -> void:
 		
 func attack() -> void:
 	attacking = true
+	
+	for child in $Visuals.get_children():
+		if child is Sprite2D:
+			child.visible = false
+			
 	var idle_visual = get_node("Visuals/sword_" + goingDirection)
 	animationPlayer.play("sword_" + goingDirection)
 	idle_visual.visible = true
