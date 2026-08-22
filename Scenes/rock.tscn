@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bmbtutrd3vb87"]
+
+[ext_resource type="Texture2D" uid="uid://bqb5wms3oxf2c" path="res://Sprites/BeginArea_Sprites/begin_rocks.png" id="1_lgx4v"]
+
+[node name="Rock" type="StaticBody2D" unique_id=162347175]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1222308149]
+texture = ExtResource("1_lgx4v")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=621172878]
+position = Vector2(-9, -9)
+polygon = PackedVector2Array(0, 0, 6, 0, 13, 4, 19, 9, 17, 12, 15, 14, 13, 14, 12, 15, 10, 16, 1, 16, -4, 12, -4, 9, -2, 3)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=1215903070]
+position = Vector2(-7, 12)
+polygon = PackedVector2Array(0, 0, -3, -3, -1, -5, 3, -5, 5, -2, 2, 0)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="." unique_id=1301504054]
+position = Vector2(9, 9)
+polygon = PackedVector2Array(0, 0, -3, -2, -1, -5, 3, -5, 4, -2, 2, 0)

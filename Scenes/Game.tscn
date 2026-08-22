@@ -1,17 +1,42 @@
 [gd_scene format=3 uid="uid://djaki6qdn4adu"]
 
 [ext_resource type="PackedScene" uid="uid://b0m5l1fmmkeb7" path="res://Scenes/Player.tscn" id="1_iukft"]
+[ext_resource type="Texture2D" uid="uid://cg62q1o2yb753" path="res://Sprites/BeginArea_Sprites/begin_ground.png" id="1_kldst"]
 [ext_resource type="Texture2D" uid="uid://ccm0vburi2b28" path="res://icon.svg" id="2_gl6un"]
 [ext_resource type="Texture2D" uid="uid://c4tev3wxt8ih" path="res://Sprites/grass_background.png" id="3_j5yw3"]
+[ext_resource type="PackedScene" uid="uid://bmbtutrd3vb87" path="res://Scenes/rock.tscn" id="5_b2bpf"]
+[ext_resource type="PackedScene" uid="uid://csb7r3vmf7q4s" path="res://Scenes/begin_trees_left.tscn" id="6_7lihs"]
 
 [node name="Game" type="Node2D" unique_id=688634170]
 
+[node name="BeginGround" type="Sprite2D" parent="." unique_id=605880521]
+position = Vector2(3, -10)
+texture = ExtResource("1_kldst")
+
 [node name="GrassBackground" type="Sprite2D" parent="." unique_id=1512478108]
+visible = false
 position = Vector2(-6, -6)
 texture = ExtResource("3_j5yw3")
+
+[node name="Rock1" parent="." unique_id=162347175 instance=ExtResource("5_b2bpf")]
+position = Vector2(-148, -61)
+
+[node name="Rock2" parent="." unique_id=1324639926 instance=ExtResource("5_b2bpf")]
+position = Vector2(140, 19)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Rock3" parent="." unique_id=1028718431 instance=ExtResource("5_b2bpf")]
+position = Vector2(149, -157)
+rotation = 3.1415927
+scale = Vector2(1, -1)
 
 [node name="Player" parent="." unique_id=525732701 instance=ExtResource("1_iukft")]
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=534190568]
+visible = false
 position = Vector2(158, 53)
 texture = ExtResource("2_gl6un")
+
+[node name="StaticBody2D" parent="." unique_id=44347837 instance=ExtResource("6_7lihs")]
+position = Vector2(-176, -11)

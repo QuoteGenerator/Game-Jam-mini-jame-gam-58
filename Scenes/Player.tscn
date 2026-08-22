@@ -11,8 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://c5bxy4axtb2cl" path="res://Sprites/Player_Sprites/walk_anim_left.png" id="8_bhhdu"]
 [ext_resource type="Texture2D" uid="uid://c3v5yjy60sg61" path="res://Sprites/Player_Sprites/walk_anim_right.png" id="9_megsn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(20, 10)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b2bpf"]
+radius = 6.0
+height = 22.0
 
 [sub_resource type="Animation" id="Animation_kyqiw"]
 length = 0.001
@@ -267,8 +268,9 @@ script = ExtResource("1_kyqiw")
 animationPlayer = NodePath("Visuals/AnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1671164280]
-position = Vector2(0, 12)
-shape = SubResource("RectangleShape2D_g4v7s")
+position = Vector2(1, 14)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_b2bpf")
 debug_color = Color(0.74990696, 0.4365992, 0.4004326, 0.41960785)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=955038116]
