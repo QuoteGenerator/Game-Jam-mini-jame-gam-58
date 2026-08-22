@@ -42,6 +42,7 @@ limit_right = 500
 limit_bottom = 525
 
 [node name="Boundaries" type="StaticBody2D" parent="." unique_id=208472465]
+collision_layer = 2
 
 [node name="Left" type="CollisionShape2D" parent="Boundaries" unique_id=1779516587]
 position = Vector2(-483, 0)
