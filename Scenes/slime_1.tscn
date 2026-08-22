@@ -109,7 +109,6 @@ _data = {
 collision_layer = 2
 script = ExtResource("1_cbd27")
 animationPlayer = NodePath("AnimationPlayer")
-speed = null
 
 [node name="slime_up" type="Sprite2D" parent="." unique_id=906782061]
 visible = false
