@@ -10,9 +10,10 @@ var target: CharacterBody2D
 var goingDirection := "down"
 
 func _ready() -> void:
-	if target.kills > 25:
+	if target.kills >= 25:
 		health = 40
 		speed = 50
+		modulate = Color(0.361, 0.361, 0.361, 1.0)
 	
 
 func _physics_process(delta: float) -> void:
