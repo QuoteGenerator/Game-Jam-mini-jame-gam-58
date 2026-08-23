@@ -565,8 +565,7 @@ _data = {
 
 [node name="Player" type="CharacterBody2D" unique_id=525732701 node_paths=PackedStringArray("time_label", "animationPlayer", "sword_hitbox")]
 z_index = 1
-collision_layer = 3
-collision_mask = 3
+collision_mask = 6
 script = ExtResource("1_kyqiw")
 time_label = NodePath("CanvasLayer/Label")
 animationPlayer = NodePath("Visuals/AnimationPlayer")
@@ -686,8 +685,8 @@ animation = &"phase1"
 autoplay = "phase1"
 
 [node name="swordHitBox" type="Area2D" parent="." unique_id=2078082643]
-collision_layer = 0
-collision_mask = 2
+collision_layer = 8
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="swordHitBox" unique_id=135295277]
 scale = Vector2(1.5, 1.5)

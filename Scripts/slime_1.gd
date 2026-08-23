@@ -1,4 +1,4 @@
-class_name slimeKing
+class_name slime
 extends CharacterBody2D
 
 @export var animationPlayer: AnimationPlayer

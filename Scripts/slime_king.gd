@@ -1,4 +1,4 @@
-class_name Slime
+class_name slimeKing
 extends CharacterBody2D
 
 @export var slime_scene: PackedScene
