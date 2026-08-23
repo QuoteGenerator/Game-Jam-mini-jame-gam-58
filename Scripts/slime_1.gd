@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 var health := 20
 
-var target: CharacterBody2D
+@export var target: CharacterBody2D
 var goingDirection := "down"
 
 # Dash-Slime
