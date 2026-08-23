@@ -28,6 +28,7 @@ func _ready() -> void:
 	op_dialogue_2.dialogue_op2_finished.connect(_on_dialogue_op2_finished)
 	fade_out.play("fade_out")
 	timer_flash_in.start()
+	Music.play("opening_cs")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

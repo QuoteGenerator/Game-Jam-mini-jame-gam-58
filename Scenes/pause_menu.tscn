@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://chv1rkel7uwgr" path="res://pause_menu.gd" id="1_myy0f"]
 [ext_resource type="Texture2D" uid="uid://cxvtcharv46tw" path="res://Sprites/Buttons/resume_up.png" id="2_sjs17"]
+[ext_resource type="AudioStream" uid="uid://mvbxxjmnk74f" path="res://Sounds/click.wav" id="2_stj27"]
 [ext_resource type="Texture2D" uid="uid://cqnq4aq3fdj4n" path="res://Sprites/Buttons/resume_down.png" id="3_u8tnp"]
 [ext_resource type="Texture2D" uid="uid://bqwcvk4qrknsr" path="res://Sprites/Buttons/shop_up.png" id="4_stj27"]
 [ext_resource type="Texture2D" uid="uid://div38speb7p80" path="res://Sprites/Buttons/shop_down.png" id="5_ix48p"]
@@ -45,6 +46,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_myy0f")
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1255826335]
+stream = ExtResource("2_stj27")
+volume_db = -14.331
 
 [node name="Resume" type="Button" parent="." unique_id=2111053980]
 z_index = 5

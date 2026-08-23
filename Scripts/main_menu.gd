@@ -8,6 +8,7 @@ extends Node2D
 @onready var blackscreen: ColorRect = $blackscreen
 @onready var switch_timer: Timer = $SwitchTimer
 
+
 #var button_type = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

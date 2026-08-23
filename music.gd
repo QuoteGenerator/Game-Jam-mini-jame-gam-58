@@ -6,9 +6,9 @@ var current_track:= ""
 
 const TRACKS := {
 	"menu": preload("res://Music/Dreamcore Tone (by juanjo_sound).wav"),
-	#"opening_cs": preload("res://assets/1. Dawn of Blades.wav"),
+	"opening_cs": preload("res://Music/Ambiance_Forest_Birds_Loop_Stereo.wav"),
 	"starter_area": preload("res://Music/Dreamcore Ice Cream (by juanjo_sound).wav"),
-	#"fighting_area": preload("res://assets/13. The Forgotten Grove.wav"),
+	"fighting_area": preload("res://Music/SwitchWithMeTheme.wav"),
 	"boss": preload("res://Music/LonePeakMusic - 22 Phobos -Retro Gaming Version-.wav"),
 }
 

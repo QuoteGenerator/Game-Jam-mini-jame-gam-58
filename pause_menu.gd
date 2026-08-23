@@ -1,5 +1,7 @@
 extends Control
 
+@onready var click: AudioStreamPlayer = $Click
+
 func _process(delta):
 	testESC()
 
@@ -19,13 +21,17 @@ func testESC():
 		resume()
 
 func _on_resume_pressed() -> void:
+	click.play()
 	resume()
 	print("pressed")
 
 func _on_shop_pressed() -> void:
+	click.play()
 	print("pressed")
 
 func _on_restart_pressed() -> void:
+	click.play()
+	await click.finished
 	print("pressed")
 	resume()
 	get_tree().reload_current_scene()

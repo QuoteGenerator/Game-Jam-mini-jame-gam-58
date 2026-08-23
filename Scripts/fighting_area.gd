@@ -5,6 +5,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Music.play("fighting_area")
 	player.time_label.show()
 	player.timer_running = true
 	player.hp_bar.show()
