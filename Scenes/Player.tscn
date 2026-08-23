@@ -14,7 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://diwrk01o4sk35" path="res://Sprites/Player_Sprites/walk_anim_down.png" id="6_nn08x"]
 [ext_resource type="Texture2D" uid="uid://bskbttr6pfqgw" path="res://Sprites/Player_Sprites/walk_anim_up.png" id="7_52ee3"]
 [ext_resource type="Texture2D" uid="uid://c5bxy4axtb2cl" path="res://Sprites/Player_Sprites/walk_anim_left.png" id="8_bhhdu"]
+[ext_resource type="Texture2D" uid="uid://o7nwdo1o488h" path="res://Sprites/phase1.png" id="8_i2e8t"]
 [ext_resource type="Texture2D" uid="uid://c3v5yjy60sg61" path="res://Sprites/Player_Sprites/walk_anim_right.png" id="9_megsn"]
+[ext_resource type="Texture2D" uid="uid://cvgn2gj4nysmm" path="res://Sprites/phase2.png" id="9_qidb7"]
+[ext_resource type="Texture2D" uid="uid://csi66dwrgbr3w" path="res://Sprites/phase3.png" id="10_70hv0"]
+[ext_resource type="Texture2D" uid="uid://dtcx0d7t67qsk" path="res://Sprites/phase4.png" id="11_8flut"]
 [ext_resource type="Texture2D" uid="uid://cjxikvfp6f7cp" path="res://Sprites/Player_Sprites/sword_anim_down.png" id="11_ksbbd"]
 [ext_resource type="Texture2D" uid="uid://dpgs7q05oaqs1" path="res://Sprites/Player_Sprites/sword_anim_up.png" id="12_o3h8g"]
 [ext_resource type="Texture2D" uid="uid://bya4kgbsdqyig" path="res://Sprites/Player_Sprites/sword_anim_left.png" id="13_1e7my"]
@@ -23,6 +27,57 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b2bpf"]
 radius = 6.0
 height = 22.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7x0b"]
+atlas = ExtResource("8_i2e8t")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utwlt"]
+atlas = ExtResource("9_qidb7")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kih0c"]
+atlas = ExtResource("10_70hv0")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyrkg"]
+atlas = ExtResource("11_8flut")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7x0b")
+}],
+"loop": 1,
+"name": &"phase1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utwlt")
+}],
+"loop": 1,
+"name": &"phase2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kih0c")
+}],
+"loop": 1,
+"name": &"phase3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyrkg")
+}],
+"loop": 1,
+"name": &"phase4",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
 radius = 12.0
@@ -549,7 +604,6 @@ limit_bottom = 525
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1207045792]
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1213576484]
-visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -566,7 +620,6 @@ text = "Time: 5:00:00"
 horizontal_alignment = 1
 
 [node name="HP_Bar" type="ColorRect" parent="CanvasLayer" unique_id=1331878760]
-visible = false
 offset_left = 26.999998
 offset_top = 19.999998
 offset_right = 67.0
@@ -575,7 +628,6 @@ scale = Vector2(9.851078, 0.83556306)
 color = Color(0.9529412, 0.3254902, 0.26666668, 1)
 
 [node name="HP_Overlay" type="TextureRect" parent="CanvasLayer" unique_id=1284434776]
-visible = false
 offset_right = 170.0
 offset_bottom = 16.0
 scale = Vector2(2.47, 2.47)
@@ -593,6 +645,24 @@ anchor_bottom = 0.5
 offset_top = -108.999985
 offset_bottom = -108.999985
 scale = Vector2(3.09, 3.09)
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=309761074]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -15.0
+offset_top = 10.0
+offset_right = 25.0
+offset_bottom = 50.0
+grow_horizontal = 0
+scale = Vector2(5.235, 5.235)
+pivot_offset = Vector2(8.52, -8.52)
+
+[node name="Phases" type="AnimatedSprite2D" parent="CanvasLayer/Control" unique_id=822603767]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"phase1"
+autoplay = "phase1"
 
 [node name="swordHitBox" type="Area2D" parent="." unique_id=2078082643]
 collision_layer = 0

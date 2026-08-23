@@ -30,6 +30,7 @@ func _physics_process(delta: float) -> void:
 	if health <= 0:
 		target.time_left += 3
 		target.kills += 1
+		target.update_phase()
 		queue_free()
 		return
 		

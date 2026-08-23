@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var sword_miss: AudioStreamPlayer = $SwordMiss
 @onready var sword_perfekt: AudioStreamPlayer = $SwordPerfekt
 @onready var damage_taken: AudioStreamPlayer = $DamageTaken
+@onready var phases: AnimatedSprite2D = $CanvasLayer/Control/Phases
 
 @export var animationPlayer: AnimationPlayer
 @export var sword_hitbox: Area2D
@@ -209,3 +210,14 @@ func update_time_label() -> void:
 	var milliseconds := int((time_left - int(time_left)) * 100)
 
 	time_label.text = "Time: %02d:%02d:%02d" % [minutes, seconds, milliseconds]
+
+
+func update_phase():
+	if kills >= 60:
+		phases.play("phase4")
+	elif kills > 40:
+		phases.play("phase3")
+	elif kills >= 25:
+		phases.play("phase2")
+	else:
+		phases.play("phase1")
