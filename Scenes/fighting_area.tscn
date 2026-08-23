@@ -98,6 +98,3 @@ texture = ExtResource("6_2wd46")
 [node name="Slime1" parent="." unique_id=2146511949 node_paths=PackedStringArray("target") instance=ExtResource("4_eeui5")]
 position = Vector2(-4, 181)
 target = NodePath("../Player")
-
-[node name="SlimeKing" parent="." unique_id=480289219 instance=ExtResource("8_dx5k0")]
-position = Vector2(54, 382)
