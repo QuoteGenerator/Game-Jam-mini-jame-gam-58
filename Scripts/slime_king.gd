@@ -22,6 +22,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	if health <= 0:	
+		Music.stop()
 		queue_free()
 		
 	spawnTimer -= delta
