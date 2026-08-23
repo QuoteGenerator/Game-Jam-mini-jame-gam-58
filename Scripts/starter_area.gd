@@ -5,6 +5,8 @@ extends Node2D
 @onready var dialogue3: DialogueBox3 = $dialogue3
 @onready var player: CharacterBody2D = $Player
 @onready var starter_cam: Camera2D = $Player/StarterCam
+@onready var fade: AnimationPlayer = $Fade/AnimationPlayer
+@onready var fade_timer: Timer = $FadeTimer
 
 var scene_switch = false
 
@@ -18,6 +20,9 @@ var npc3_entered = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	fade.play("fade_out")
+	fade_timer.start()
+	player.set_physics_process(false)
 	starter_cam.make_current()
 	dialogue1.dialogue1_finished.connect(_on_dialogue1_finished)
 	dialogue2.dialogue2_finished.connect(_on_dialogue2_finished)
@@ -116,3 +121,7 @@ func _on_scene_switch_body_entered(body: Node2D) -> void:
 	
 	get_tree().call_deferred("change_scene_to_file", "res://Scenes/fighting_area.tscn")
 	#get_tree().change_scene_to_file("res://Scenes/fighting_area.tscn")
+
+
+func _on_fade_timer_timeout() -> void:
+	player.set_physics_process(true)

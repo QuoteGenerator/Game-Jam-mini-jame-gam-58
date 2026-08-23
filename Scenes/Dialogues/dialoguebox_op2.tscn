@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://kvte3fyv51su"]
+[gd_scene format=3 uid="uid://dc2rdcmuautj7"]
 
-[ext_resource type="Script" uid="uid://cgt1pamg6e0f2" path="res://Scripts/dialoguebox_3.gd" id="1_mfp8a"]
-[ext_resource type="FontFile" uid="uid://chuhmtroqou3k" path="res://PixeloidSans (1).ttf" id="2_a0m2n"]
+[ext_resource type="Script" uid="uid://d3134644r5lmj" path="res://Scripts/dialoguebox_op_2.gd" id="1_2ejeq"]
+[ext_resource type="FontFile" uid="uid://chuhmtroqou3k" path="res://PixeloidSans (1).ttf" id="2_thog8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gngh"]
 bg_color = Color(0.004019165, 0.004019165, 0.004019165, 1)
@@ -12,7 +12,7 @@ border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 
 [node name="Textbox" type="CanvasLayer" unique_id=1368686350]
-script = ExtResource("1_mfp8a")
+script = ExtResource("1_2ejeq")
 
 [node name="SfxRetroMultiplev1" type="AudioStreamPlayer" parent="." unique_id=896633466]
 
@@ -55,7 +55,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(7, 0)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("2_a0m2n")
+theme_override_fonts/font = ExtResource("2_thog8")
 theme_override_font_sizes/font_size = 34
 text = "*"
 
@@ -64,7 +64,7 @@ custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_fonts/font = ExtResource("2_a0m2n")
+theme_override_fonts/font = ExtResource("2_thog8")
 theme_override_font_sizes/font_size = 34
 text = "Placeholder"
 autowrap_mode = 3
@@ -74,8 +74,6 @@ clip_text = true
 layout_mode = 2
 size_flags_vertical = 8
 offset_transform_enabled = true
-theme_override_fonts/font = ExtResource("2_a0m2n")
+theme_override_fonts/font = ExtResource("2_thog8")
 theme_override_font_sizes/font_size = 34
 text = "V"
-
-[connection signal="dialogue3_finished" from="." to="." method="_on_dialogue_3_finished"]

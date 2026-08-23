@@ -6,7 +6,6 @@ extends Node2D
 @onready var start: Button = $Button_Manager/Start
 @onready var church_bell: AudioStreamPlayer = $ChurchBell
 @onready var blackscreen: ColorRect = $blackscreen
-@onready var label: Label = $Label
 @onready var switch_timer: Timer = $SwitchTimer
 
 #var button_type = null
@@ -23,10 +22,9 @@ func _on_start_pressed() -> void:
 	timer.start()
 	
 func _on_timer_timeout() -> void:
-	label.show()
 	blackscreen.show()
 	switch_timer.start()
 
 
 func _on_switch_timer_timeout() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://Scenes/StarterArea.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/Opening_Cs.tscn")

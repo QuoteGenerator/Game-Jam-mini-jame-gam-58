@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://2w0uunhu7yjx"]
 
 [ext_resource type="Script" uid="uid://373g2ee76o7n" path="res://Scripts/dialoguebox_1.gd" id="1_unh6s"]
+[ext_resource type="FontFile" uid="uid://chuhmtroqou3k" path="res://PixeloidSans (1).ttf" id="2_5n4pt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gngh"]
 bg_color = Color(0.004019165, 0.004019165, 0.004019165, 1)
@@ -9,78 +10,6 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
-
-[sub_resource type="FontFile" id="FontFile_yf5fn"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/34/0/ascent = 0.0
-cache/0/34/0/descent = 0.0
-cache/0/34/0/underline_position = 0.0
-cache/0/34/0/underline_thickness = 0.0
-cache/0/34/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_57qmd"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/34/0/ascent = 0.0
-cache/0/34/0/descent = 0.0
-cache/0/34/0/underline_position = 0.0
-cache/0/34/0/underline_thickness = 0.0
-cache/0/34/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_d0u6y"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/variation_coordinates = {}
-cache/0/face_index = 0
-cache/0/embolden = 0.0
-cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
-cache/0/spacing_top = 0
-cache/0/spacing_bottom = 0
-cache/0/spacing_space = 0
-cache/0/spacing_glyph = 0
-cache/0/baseline_offset = 0.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/34/0/ascent = 0.0
-cache/0/34/0/descent = 0.0
-cache/0/34/0/underline_position = 0.0
-cache/0/34/0/underline_thickness = 0.0
-cache/0/34/0/scale = 1.0
 
 [node name="Textbox" type="CanvasLayer" unique_id=1368686350]
 script = ExtResource("1_unh6s")
@@ -126,7 +55,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(7, 0)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_fonts/font = SubResource("FontFile_yf5fn")
+theme_override_fonts/font = ExtResource("2_5n4pt")
 theme_override_font_sizes/font_size = 34
 text = "*"
 
@@ -135,7 +64,7 @@ custom_minimum_size = Vector2(250, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_fonts/font = SubResource("FontFile_57qmd")
+theme_override_fonts/font = ExtResource("2_5n4pt")
 theme_override_font_sizes/font_size = 34
 text = "Placeholder"
 autowrap_mode = 3
@@ -145,7 +74,7 @@ clip_text = true
 layout_mode = 2
 size_flags_vertical = 8
 offset_transform_enabled = true
-theme_override_fonts/font = SubResource("FontFile_d0u6y")
+theme_override_fonts/font = ExtResource("2_5n4pt")
 theme_override_font_sizes/font_size = 34
 text = "V"
 

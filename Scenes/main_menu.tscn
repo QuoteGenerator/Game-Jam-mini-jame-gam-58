@@ -3,14 +3,13 @@
 [ext_resource type="Script" uid="uid://b5wrvxbqfx1mi" path="res://Scripts/main_menu.gd" id="1_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://blfb8fln5dcv1" path="res://Sprites/Buttons/play_up.png" id="1_48xlc"]
 [ext_resource type="Texture2D" uid="uid://cxgqkmhilhedu" path="res://Sprites/Buttons/play_down.png" id="2_1ehe0"]
-[ext_resource type="AudioStream" uid="uid://lq45icrrjk45" path="res://Sounds/Church_Bell.mp3" id="2_16hvj"]
+[ext_resource type="AudioStream" uid="uid://margejf0k6a4" path="res://Sounds/Church_Bell.mp3" id="2_16hvj"]
 [ext_resource type="Texture2D" uid="uid://8amirdiv8qst" path="res://Sprites/MainMenu_Sprites/mainmenubg.png" id="2_trj04"]
 [ext_resource type="Texture2D" uid="uid://cg8ad1kbjn8sp" path="res://Sprites/MainMenu_Sprites/slime_king.png" id="2_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://tkdqffxbcxp6" path="res://Sprites/MainMenu_Sprites/chronos.png" id="3_trj04"]
 [ext_resource type="Texture2D" uid="uid://liokyxm7iys3" path="res://Sprites/MainMenu_Sprites/chronoquestlogo.png" id="4_ce3w2"]
 [ext_resource type="Texture2D" uid="uid://h3hb8ah1owk1" path="res://Sprites/MainMenu_Sprites/menusprite1.png" id="5_opfnp"]
 [ext_resource type="Texture2D" uid="uid://12a2q24s8523" path="res://Sprites/MainMenu_Sprites/menusprite2.png" id="6_cp0ys"]
-[ext_resource type="FontFile" uid="uid://chuhmtroqou3k" path="res://PixeloidSans (1).ttf" id="11_vr1f0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g4v7s"]
 texture = ExtResource("1_48xlc")
@@ -60,8 +59,9 @@ _data = {
 [node name="MainMenu" type="Node2D" unique_id=2123291676]
 script = ExtResource("1_1ehe0")
 
-[node name="ChurchBell" type="AudioStreamPlayer" parent="." unique_id=1663568959]
+[node name="ChurchBell" type="AudioStreamPlayer" parent="." unique_id=813964208]
 stream = ExtResource("2_16hvj")
+volume_db = -2.125
 
 [node name="Mainmenubg" type="Sprite2D" parent="." unique_id=428273264]
 position = Vector2(-2, -11)
@@ -126,10 +126,11 @@ scale = Vector2(2.5576923, 2.5576923)
 texture = ExtResource("6_cp0ys")
 
 [node name="fade_screen" type="ColorRect" parent="." unique_id=964637050]
-offset_left = -144.0
-offset_top = -84.0
-offset_right = 148.0
-offset_bottom = 83.0
+visible = false
+offset_left = -303.0
+offset_top = -179.0
+offset_right = 326.0
+offset_bottom = 162.0
 color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="fade_screen" unique_id=1143767955]
@@ -137,21 +138,11 @@ libraries/ = SubResource("AnimationLibrary_n45e2")
 
 [node name="blackscreen" type="ColorRect" parent="." unique_id=1691069228]
 visible = false
-offset_left = -164.0
-offset_top = -102.0
-offset_right = 159.0
-offset_bottom = 85.0
+offset_left = -310.0
+offset_top = -170.0
+offset_right = 362.0
+offset_bottom = 166.0
 color = Color(0, 0, 0, 1)
-
-[node name="Label" type="Label" parent="." unique_id=49262303]
-visible = false
-offset_left = -36.0
-offset_top = -9.0
-offset_right = 60.0
-offset_bottom = 11.0
-scale = Vector2(0.735, 0.735)
-theme_override_fonts/font = ExtResource("11_vr1f0")
-text = "A day ago..."
 
 [node name="SwitchTimer" type="Timer" parent="." unique_id=1872213795]
 wait_time = 5.0
