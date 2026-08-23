@@ -20,7 +20,7 @@ func _ready() -> void:
 	if target.kills >= 60:
 		modulate = Color.RED
 		health = 10
-		speed = 10
+		speed = 30
 	elif target.kills >= 40:
 		dash = true
 		modulate = Color.BLACK
