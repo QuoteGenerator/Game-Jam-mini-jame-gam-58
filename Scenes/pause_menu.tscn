@@ -62,7 +62,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_g4v7s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_yf5fn")
 theme_override_styles/hover = SubResource("StyleBoxTexture_57qmd")
 
-[node name="Shop" type="Button" parent="." unique_id=1753525109]
+[node name="Shop2" type="Button" parent="." unique_id=1753525109]
 z_index = 5
 layout_mode = 0
 offset_left = -30.0
@@ -90,5 +90,5 @@ scale = Vector2(1.1419753, 1.1419753)
 texture = ExtResource("8_u8tnp")
 
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="Shop2" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

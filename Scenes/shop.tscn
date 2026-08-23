@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://dinqvxkaew36q"]
+
+[ext_resource type="Texture2D" uid="uid://bvue650lao4h1" path="res://Sprites/Buttons/shopbg.png" id="1_5xp22"]
+[ext_resource type="Script" uid="uid://dh5svvat6q3b" path="res://Scripts/shop.gd" id="1_k6pkm"]
+[ext_resource type="Texture2D" uid="uid://vbqd7rw58eh3" path="res://Sprites/Buttons/atk_upgrade_btn.png" id="2_ow1eo"]
+[ext_resource type="Texture2D" uid="uid://dgvp4pxowrdts" path="res://Sprites/Buttons/atk_upgrade_btn_press.png" id="3_k6pkm"]
+[ext_resource type="Texture2D" uid="uid://bexsc5u2g2w2" path="res://Sprites/Buttons/atk_upgrade_btn_hover.png" id="4_1sjcd"]
+[ext_resource type="Texture2D" uid="uid://c2hkndawsf0qw" path="res://Sprites/Buttons/speed_upgrade_btn.png" id="5_1cyt5"]
+[ext_resource type="Texture2D" uid="uid://k2hb43a16hhs" path="res://Sprites/Buttons/speed_upgrade_btn_press.png" id="6_0vsm1"]
+[ext_resource type="Texture2D" uid="uid://dftjfifthlff1" path="res://Sprites/Buttons/speed_upgrade_btn_hover.png" id="7_3568l"]
+[ext_resource type="Texture2D" uid="uid://cucw5s3eje1nd" path="res://Sprites/Buttons/hp_upgrade_btn.png" id="8_mjtuy"]
+[ext_resource type="Texture2D" uid="uid://kchh33dw4mu4" path="res://Sprites/Buttons/hp_upgrade_btn_press.png" id="9_cuuv1"]
+[ext_resource type="Texture2D" uid="uid://337wq2gnxecc" path="res://Sprites/Buttons/hp_upgrade_btn_hover.png" id="10_yl1pv"]
+[ext_resource type="Texture2D" uid="uid://bhp8wowhxwfig" path="res://Sprites/Buttons/x_btn.png" id="12_0vsm1"]
+[ext_resource type="AudioStream" uid="uid://mvbxxjmnk74f" path="res://Sounds/click.wav" id="12_1sjcd"]
+[ext_resource type="Texture2D" uid="uid://bmhi65nw6u8wr" path="res://Sprites/Buttons/x_btn_press.png" id="13_3568l"]
+[ext_resource type="Texture2D" uid="uid://cllde5i6arlji" path="res://Sprites/Buttons/x_btn_hover.png" id="14_mjtuy"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m13ki"]
+texture = ExtResource("2_ow1eo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3mbjb"]
+texture = ExtResource("3_k6pkm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jhx1v"]
+texture = ExtResource("4_1sjcd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dvu38"]
+texture = ExtResource("5_1cyt5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k7yfq"]
+texture = ExtResource("6_0vsm1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6rctg"]
+texture = ExtResource("7_3568l")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1shhe"]
+texture = ExtResource("8_mjtuy")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n1qjt"]
+texture = ExtResource("9_cuuv1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ik0jt"]
+texture = ExtResource("10_yl1pv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g4v7s"]
+texture = ExtResource("12_0vsm1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yf5fn"]
+texture = ExtResource("13_3568l")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_57qmd"]
+texture = ExtResource("14_mjtuy")
+
+[node name="Shop" type="Control" unique_id=1681799580]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_k6pkm")
+
+[node name="Shopbg" type="Sprite2D" parent="." unique_id=1118555234]
+position = Vector2(1, 32)
+texture = ExtResource("1_5xp22")
+
+[node name="ATK" type="Button" parent="." unique_id=1765195813]
+layout_mode = 0
+offset_left = -71.0
+offset_top = -10.0
+offset_right = 33.0
+offset_bottom = 21.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_m13ki")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3mbjb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jhx1v")
+
+[node name="SPEED" type="Button" parent="." unique_id=1517198340]
+layout_mode = 0
+offset_left = -71.0
+offset_top = 27.0
+offset_right = 33.0
+offset_bottom = 58.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_dvu38")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k7yfq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6rctg")
+
+[node name="HP" type="Button" parent="." unique_id=1494157097]
+process_mode = 3
+layout_mode = 0
+offset_left = -71.0
+offset_top = 64.0
+offset_right = 33.0
+offset_bottom = 95.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_1shhe")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_n1qjt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ik0jt")
+
+[node name="X" type="Button" parent="." unique_id=1652285203]
+layout_mode = 0
+offset_left = 71.0
+offset_top = -34.0
+offset_right = 81.0
+offset_bottom = -24.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_g4v7s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yf5fn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_57qmd")
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=357259700]
+stream = ExtResource("12_1sjcd")
+volume_db = -14.331
+bus = &"sounds"
+
+[connection signal="pressed" from="ATK" to="." method="_on_atk_pressed"]
+[connection signal="pressed" from="SPEED" to="." method="_on_speed_pressed"]
+[connection signal="pressed" from="HP" to="." method="_on_hp_pressed"]
+[connection signal="pressed" from="X" to="." method="_on_x_pressed"]
