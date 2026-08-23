@@ -81,7 +81,7 @@ func _physics_process(delta: float) -> void:
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 
-		if collider is Slime and can_take_damage:
+		if (collider is slime or collider is slimeKing) and can_take_damage:
 			take_damage(10)
 			damage_taken.play()
 
@@ -146,7 +146,7 @@ func check_sword_hit() -> void:
 	for body in bodies:
 		print("Gefunden: ", body.name)
 
-		if body is Slime or body is slimeKing:
+		if body is slime or body is slimeKing:
 			body.health -= 10
 			body.hit_flash()
 
