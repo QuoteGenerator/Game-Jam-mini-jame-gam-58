@@ -94,8 +94,7 @@ func run_dialogue1():
 		dialogue1_open = true
 		dialogue1.show()
 		
-		dialogue1.queue_text("hello im npc 1!")
-		dialogue1.queue_text("it is nice to meet u :D")
+		dialogue1.queue_text("Shadow Villager 1: ...")
 
 func run_dialogue2():
 	if Input.is_action_just_pressed("Interact") and npc2_entered and not dialogue2_open:
@@ -103,8 +102,7 @@ func run_dialogue2():
 		dialogue2_open = true
 		dialogue2.show()
 		
-		dialogue2.queue_text("hello im npc 2!")
-		dialogue2.queue_text("dont mind me, im just sitting here.")
+		dialogue2.queue_text("Shadow Villager 3: Save us, chosen one...")
 
 func run_dialogue3():
 	if Input.is_action_just_pressed("Interact") and npc3_entered and not dialogue3_open:
@@ -112,8 +110,9 @@ func run_dialogue3():
 		dialogue3_open = true
 		dialogue3.show()
 		
-		dialogue3.queue_text("hello im npc 3!")
-		dialogue3.queue_text("i like this rock.")
+		dialogue3.queue_text("Shadow Villager 2: Ever since the day they've taken away my color...")
+		dialogue3.queue_text("Shadow Villager 2: I've lost my purpose in life. I can't keep going like this...")
+		
 
 
 func _on_scene_switch_body_entered(body: Node2D) -> void:
