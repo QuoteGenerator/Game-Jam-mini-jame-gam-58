@@ -11,6 +11,7 @@ func _ready() -> void:
 	player.hp_bar.show()
 	player.hp_overlay.show()
 	player.ph.show()
+	player.ph2.show()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -29,7 +29,7 @@ func _ready() -> void:
 	dialogue2.dialogue2_finished.connect(_on_dialogue2_finished)
 	dialogue3.dialogue3_finished.connect(_on_dialogue3_finished)
 	#dialogue1.queue_text("hello") #queue any text
-	pass
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
