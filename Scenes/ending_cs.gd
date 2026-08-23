@@ -9,6 +9,7 @@ extends Node2D
 @onready var textbox: DialogueBox_End = $Textbox
 @onready var blackscreen: AnimationPlayer = $Black/AnimationPlayer
 @onready var teleport: AudioStreamPlayer = $Teleport
+@onready var timer_2: Timer = $Timer2
 
 var dialogue_open = false
 # Called when the node enters the scene tree for the first time.
@@ -50,4 +51,9 @@ func _on_dialogue_end_finished():
 	textbox.hide()
 	dialogue_open = false
 	blackscreen.play("fade_in")
+	timer_2.start()
 	
+
+
+func _on_timer_2_timeout() -> void:
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/end_screen.tscn")

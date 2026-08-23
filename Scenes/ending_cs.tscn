@@ -307,7 +307,7 @@ position = Vector2(-73, 75)
 sprite_frames = SubResource("SpriteFrames_yf5fn")
 animation = &"tweak"
 autoplay = "up"
-frame_progress = 0.7173632
+frame_progress = 0.7449674
 
 [node name="CrownSprite" type="Sprite2D" parent="." unique_id=363291732]
 position = Vector2(-58, 27)
@@ -338,7 +338,7 @@ position = Vector2(10, 74)
 sprite_frames = SubResource("SpriteFrames_f4upj")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.17771636
+frame_progress = 0.21898189
 
 [node name="TimerDialogueStart" type="Timer" parent="." unique_id=601824617]
 wait_time = 2.0
@@ -355,6 +355,11 @@ color = Color(0, 0, 0, 0)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Black" unique_id=628840081]
 libraries/ = SubResource("AnimationLibrary_gk7et")
 
+[node name="Timer2" type="Timer" parent="." unique_id=2128146578]
+wait_time = 4.0
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TimerFlashout" to="." method="_on_timer_flashout_timeout"]
 [connection signal="timeout" from="TimerDialogueStart" to="." method="_on_timer_dialogue_start_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

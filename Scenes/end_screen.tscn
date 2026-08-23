@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://btokyrxp27d56"]
+
+[ext_resource type="FontFile" uid="uid://chuhmtroqou3k" path="res://PixeloidSans (1).ttf" id="1_f2mtv"]
+
+[node name="Node2D" type="Node2D" unique_id=431160632]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1239669752]
+offset_left = -326.0
+offset_top = -218.0
+offset_right = 315.0
+offset_bottom = 175.0
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=349962477]
+zoom = Vector2(2.665, 2.665)
+
+[node name="Label" type="Label" parent="." unique_id=909999375]
+offset_left = -168.0
+offset_top = -13.0
+offset_right = 113.0
+offset_bottom = 10.0
+scale = Vector2(1.198, 1.198)
+theme_override_fonts/font = ExtResource("1_f2mtv")
+text = "THE END! THANKS FOR PLAYING! :)"
