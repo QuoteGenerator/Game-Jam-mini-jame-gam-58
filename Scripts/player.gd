@@ -6,7 +6,9 @@ extends CharacterBody2D
 @onready var sword_perfekt: AudioStreamPlayer = $SwordPerfekt
 @onready var damage_taken: AudioStreamPlayer = $DamageTaken
 @onready var phases: AnimatedSprite2D = $CanvasLayer/Control/Phases
-@onready var ph: Control = $CanvasLayer/Control
+@onready var ph: AnimatedSprite2D = $CanvasLayer/Control/Phases
+@onready var ph2: Control = $CanvasLayer/Control
+
 
 @export var animationPlayer: AnimationPlayer
 @export var sword_hitbox: Area2D
