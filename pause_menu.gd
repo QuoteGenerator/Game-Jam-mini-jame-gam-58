@@ -3,6 +3,7 @@ extends Control
 @onready var click: AudioStreamPlayer = $Click
 @onready var shop: Control = $"../Shop"
 
+
 func _process(delta):
 	testESC()
 

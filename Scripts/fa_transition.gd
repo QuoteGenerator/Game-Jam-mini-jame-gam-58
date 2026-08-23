@@ -7,6 +7,7 @@ extends Node2D
 @onready var a1: AnimationPlayer = $Path2D/PathFollow2D/Player/CanvasLayer2/Label/AnimationPlayer
 @onready var a2: AnimationPlayer = $Path2D/PathFollow2D/Player/CanvasLayer2/HP_Bar/AnimationPlayer
 @onready var a3: AnimationPlayer = $Path2D/PathFollow2D/Player/CanvasLayer2/HP_Overlay/AnimationPlayer
+@onready var a4: AnimationPlayer = $Path2D/PathFollow2D/Player/CanvasLayer2/Control/AnimationPlayer
 
 var is_path_following = false
 # Called when the node enters the scene tree for the first time.
@@ -35,6 +36,7 @@ func _physics_process(delta):
 			a1.play("fade_in")
 			a2.play("fade_in")
 			a3.play("fade_in")
+			a4.play("fade_in")
 			
 			timer.start()
 

@@ -8,7 +8,12 @@
 [ext_resource type="FontFile" uid="uid://chuhmtroqou3k" path="res://PixeloidSans (1).ttf" id="7_6au4w"]
 [ext_resource type="Texture2D" uid="uid://by3ni7q61m13q" path="res://Sprites/FightingArea_Sprites/tree_border_fightingarea.png" id="7_lp7s8"]
 [ext_resource type="Texture2D" uid="uid://raf1ut0gdjai" path="res://Sprites/Player_Sprites/player_hpbar.png" id="8_th0jh"]
+[ext_resource type="PackedScene" uid="uid://dinqvxkaew36q" path="res://Scenes/shop.tscn" id="9_aqhox"]
 [ext_resource type="PackedScene" uid="uid://ykcejkk5hwej" path="res://Scenes/pause_menu.tscn" id="9_sv4cb"]
+[ext_resource type="Texture2D" uid="uid://o7nwdo1o488h" path="res://Sprites/phase1.png" id="10_lp7s8"]
+[ext_resource type="Texture2D" uid="uid://cvgn2gj4nysmm" path="res://Sprites/phase2.png" id="11_aqhox"]
+[ext_resource type="Texture2D" uid="uid://csi66dwrgbr3w" path="res://Sprites/phase3.png" id="12_5th1p"]
+[ext_resource type="Texture2D" uid="uid://dtcx0d7t67qsk" path="res://Sprites/phase4.png" id="13_mh847"]
 
 [sub_resource type="Curve2D" id="Curve2D_hxp6n"]
 _data = {
@@ -168,6 +173,94 @@ _data = {
 &"fade_in": SubResource("Animation_qidb7")
 }
 
+[sub_resource type="Animation" id="Animation_aqhox"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lp7s8"]
+resource_name = "fade_in"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5th1p"]
+_data = {
+&"RESET": SubResource("Animation_aqhox"),
+&"fade_in": SubResource("Animation_lp7s8")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7x0b"]
+atlas = ExtResource("10_lp7s8")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utwlt"]
+atlas = ExtResource("11_aqhox")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kih0c"]
+atlas = ExtResource("12_5th1p")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyrkg"]
+atlas = ExtResource("13_mh847")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ndxe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7x0b")
+}],
+"loop": 1,
+"name": &"phase1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utwlt")
+}],
+"loop": 1,
+"name": &"phase2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kih0c")
+}],
+"loop": 1,
+"name": &"phase3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyrkg")
+}],
+"loop": 1,
+"name": &"phase4",
+"speed": 5.0
+}]
+
 [node name="fa_transition" type="Node2D" unique_id=1529102488]
 script = ExtResource("1_iysnx")
 
@@ -228,6 +321,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 0)
 theme_override_fonts/font = ExtResource("7_6au4w")
 text = "Time: 5:00:00"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D/PathFollow2D/Player/CanvasLayer2/Label" unique_id=1519843880]
 libraries/ = SubResource("AnimationLibrary_j52sy")
@@ -239,6 +333,7 @@ offset_right = 67.0
 offset_bottom = 60.0
 scale = Vector2(9.851078, 0.83556306)
 color = Color(0.9529412, 0.3254902, 0.26666668, 0)
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D/PathFollow2D/Player/CanvasLayer2/HP_Bar" unique_id=1405573392]
 libraries/ = SubResource("AnimationLibrary_lp7s8")
@@ -251,9 +346,25 @@ scale = Vector2(2.47, 2.47)
 pivot_offset = Vector2(-10.27, -11.52)
 texture = ExtResource("8_th0jh")
 stretch_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D/PathFollow2D/Player/CanvasLayer2/HP_Overlay" unique_id=1551369083]
 libraries/ = SubResource("AnimationLibrary_aqhox")
+
+[node name="Shop" parent="Path2D/PathFollow2D/Player/CanvasLayer2" unique_id=1681799580 instance=ExtResource("9_aqhox")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -114.0
+offset_right = 39.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3.645, 3.645)
 
 [node name="PauseMenu" parent="Path2D/PathFollow2D/Player/CanvasLayer2" unique_id=790691493 instance=ExtResource("9_sv4cb")]
 visible = false
@@ -265,6 +376,30 @@ anchor_bottom = 0.5
 offset_top = -108.999985
 offset_bottom = -108.999985
 scale = Vector2(3.09, 3.09)
+
+[node name="Control" type="Control" parent="Path2D/PathFollow2D/Player/CanvasLayer2" unique_id=153151946]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -15.0
+offset_top = 10.0
+offset_right = 25.0
+offset_bottom = 50.0
+grow_horizontal = 0
+scale = Vector2(5.235, 5.235)
+pivot_offset = Vector2(8.52, -8.52)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D/PathFollow2D/Player/CanvasLayer2/Control" unique_id=1850593378]
+root_node = NodePath("../Phases")
+libraries/ = SubResource("AnimationLibrary_5th1p")
+
+[node name="Phases" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/Player/CanvasLayer2/Control" unique_id=838024430]
+sprite_frames = SubResource("SpriteFrames_7ndxe")
+animation = &"phase1"
+autoplay = "phase1"
 
 [node name="Timer" type="Timer" parent="." unique_id=991301738]
 wait_time = 1.5

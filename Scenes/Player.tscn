@@ -666,6 +666,7 @@ offset_bottom = -108.999985
 scale = Vector2(3.09, 3.09)
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=309761074]
+visible = false
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
@@ -679,6 +680,7 @@ scale = Vector2(5.235, 5.235)
 pivot_offset = Vector2(8.52, -8.52)
 
 [node name="Phases" type="AnimatedSprite2D" parent="CanvasLayer/Control" unique_id=822603767]
+visible = false
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"phase1"
 autoplay = "phase1"
