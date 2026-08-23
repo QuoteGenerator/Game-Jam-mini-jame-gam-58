@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://rx4kgdbm0xh4"]
 
-[ext_resource type="Script" uid="uid://hh0765md7rlu" path="res://Scripts/fighting_area.gd" id="1_f4upj"]
-[ext_resource type="AudioStream" uid="uid://jt8jb5hiq14y" path="res://Sounds/slime_death.wav" id="2_3uvd4"]
+[ext_resource type="Script" uid="uid://bn2lvdyw1tfln" path="res://Scenes/ending_cs.gd" id="1_f4upj"]
+[ext_resource type="AudioStream" uid="uid://b8pljiba8eusc" path="res://Sounds/Teleport.mp3" id="2_3uvd4"]
+[ext_resource type="PackedScene" uid="uid://bahkdi53jc6bf" path="res://Scenes/Dialogues/dialoguebox_end.tscn" id="2_5te37"]
 [ext_resource type="Texture2D" uid="uid://bomgcwigoayj5" path="res://Sprites/FightingArea_Sprites/fighting_area.png" id="3_5te37"]
-[ext_resource type="PackedScene" uid="uid://b0m5l1fmmkeb7" path="res://Scenes/Player.tscn" id="4_yimas"]
 [ext_resource type="Texture2D" uid="uid://c728elftex73q" path="res://Sprites/Player_Sprites/idle_anim_right.png" id="6_f4upj"]
+[ext_resource type="Texture2D" uid="uid://b5mpwcfb14nt1" path="res://Sprites/coloredmc_idle.png" id="6_yimas"]
 [ext_resource type="Texture2D" uid="uid://bvnran3t5wobq" path="res://Sprites/Player_Sprites/idle_anim_up.png" id="7_3uvd4"]
+[ext_resource type="Texture2D" uid="uid://5e6c7grbeji3" path="res://Sprites/mc_tweak.png" id="7_5te37"]
 [ext_resource type="Texture2D" uid="uid://by3ni7q61m13q" path="res://Sprites/FightingArea_Sprites/tree_border_fightingarea.png" id="8_4oefe"]
 [ext_resource type="Texture2D" uid="uid://cg1c6py2rxyxf" path="res://Sprites/crown_sprite.png" id="8_5te37"]
+[ext_resource type="Texture2D" uid="uid://clwjwvvt5bfpi" path="res://Sprites/Cutscene_Sprites/cs_chronosidle.png" id="8_f4upj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 radius = 34.0
@@ -27,6 +30,14 @@ height = 94.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(55.5, 11.5)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsr1d"]
+atlas = ExtResource("6_yimas")
+region = Rect2(0, 0, 16, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ooos"]
+atlas = ExtResource("6_yimas")
+region = Rect2(16, 0, 16, 35)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_yimas"]
 atlas = ExtResource("6_f4upj")
 region = Rect2(0, 0, 16, 34)
@@ -34,6 +45,14 @@ region = Rect2(0, 0, 16, 34)
 [sub_resource type="AtlasTexture" id="AtlasTexture_eymyx"]
 atlas = ExtResource("6_f4upj")
 region = Rect2(16, 0, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4oefe"]
+atlas = ExtResource("7_5te37")
+region = Rect2(0, 0, 16, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsnhy"]
+atlas = ExtResource("7_5te37")
+region = Rect2(16, 0, 16, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gk7et"]
 atlas = ExtResource("7_3uvd4")
@@ -47,6 +66,17 @@ region = Rect2(16, 0, 16, 33)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_fsr1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ooos")
+}],
+"loop": 1,
+"name": &"colored_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_yimas")
 }, {
 "duration": 1.0,
@@ -55,6 +85,17 @@ animations = [{
 "loop": 1,
 "name": &"right",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4oefe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsnhy")
+}],
+"loop": 1,
+"name": &"tweak",
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -122,25 +163,101 @@ _data = {
 &"fade_out": SubResource("Animation_5te37")
 }
 
-[node name="FightingArea" type="Node2D" unique_id=1529102488]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hnm2"]
+atlas = ExtResource("8_f4upj")
+region = Rect2(8, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7mpq"]
+atlas = ExtResource("8_f4upj")
+region = Rect2(40, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f4upj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hnm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7mpq")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="Animation" id="Animation_yimas"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_eymyx"]
+resource_name = "fade_in"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gk7et"]
+resource_name = "fade_out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gk7et"]
+_data = {
+&"RESET": SubResource("Animation_yimas"),
+&"fade_in": SubResource("Animation_eymyx"),
+&"fade_out": SubResource("Animation_gk7et")
+}
+
+[node name="ending_cs" type="Node2D" unique_id=1529102488]
 script = ExtResource("1_f4upj")
 
-[node name="SlimeDeath" type="AudioStreamPlayer" parent="." unique_id=474840358]
+[node name="Textbox" parent="." unique_id=1368686350 instance=ExtResource("2_5te37")]
+
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=926975602]
+position = Vector2(-33, 79)
+zoom = Vector2(4.615, 4.615)
+limit_left = -500
+limit_top = -520
+limit_right = 500
+limit_bottom = 525
+
+[node name="Teleport" type="AudioStreamPlayer" parent="." unique_id=1489299200]
 stream = ExtResource("2_3uvd4")
 
 [node name="FightingArea" type="Sprite2D" parent="." unique_id=225800565]
 position = Vector2(0, 1)
 texture = ExtResource("3_5te37")
-
-[node name="Player" parent="." unique_id=525732701 instance=ExtResource("4_yimas")]
-position = Vector2(-33, 79)
-
-[node name="Camera" type="Camera2D" parent="Player" unique_id=480596617]
-zoom = Vector2(3, 3)
-limit_left = -500
-limit_top = -520
-limit_right = 500
-limit_bottom = 525
 
 [node name="Boundaries" type="StaticBody2D" parent="." unique_id=208472465]
 collision_layer = 2
@@ -185,12 +302,12 @@ z_index = 237
 position = Vector2(0, 1)
 texture = ExtResource("8_4oefe")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1056562637]
-position = Vector2(-58, 73)
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=1056562637]
+position = Vector2(-73, 75)
 sprite_frames = SubResource("SpriteFrames_yf5fn")
-animation = &"up"
+animation = &"tweak"
 autoplay = "up"
-frame_progress = 0.5004905
+frame_progress = 0.7173632
 
 [node name="CrownSprite" type="Sprite2D" parent="." unique_id=363291732]
 position = Vector2(-58, 27)
@@ -206,3 +323,38 @@ color = Color(1, 1, 1, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=2060705628]
 libraries/ = SubResource("AnimationLibrary_5te37")
+
+[node name="Timer" type="Timer" parent="." unique_id=1415652488]
+wait_time = 5.0
+one_shot = true
+
+[node name="TimerFlashout" type="Timer" parent="." unique_id=724817766]
+wait_time = 3.0
+one_shot = true
+
+[node name="Chronos" type="AnimatedSprite2D" parent="." unique_id=2072473275]
+visible = false
+position = Vector2(10, 74)
+sprite_frames = SubResource("SpriteFrames_f4upj")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.17771636
+
+[node name="TimerDialogueStart" type="Timer" parent="." unique_id=601824617]
+wait_time = 2.0
+one_shot = true
+
+[node name="Black" type="ColorRect" parent="." unique_id=1886135558]
+z_index = 2
+offset_left = -580.0
+offset_top = -335.0
+offset_right = 616.0
+offset_bottom = 462.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Black" unique_id=628840081]
+libraries/ = SubResource("AnimationLibrary_gk7et")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimerFlashout" to="." method="_on_timer_flashout_timeout"]
+[connection signal="timeout" from="TimerDialogueStart" to="." method="_on_timer_dialogue_start_timeout"]
