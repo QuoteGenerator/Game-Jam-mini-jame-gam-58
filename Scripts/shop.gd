@@ -4,6 +4,7 @@ extends Control
 @onready var click: AudioStreamPlayer = $Click
 
 @onready var player: CharacterBody2D = $"../.."
+@onready var coin: AudioStreamPlayer = $Coin4
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,7 +21,8 @@ func _on_atk_pressed() -> void:
 	player.damage += 10
 	player.time_left -= 60
 	player.update_time_label()
-	click.play()
+	#click.play()
+	coin.play()
 
 
 func _on_speed_pressed() -> void:
@@ -28,7 +30,8 @@ func _on_speed_pressed() -> void:
 	player.speed += 10
 	player.time_left -= 60
 	player.update_time_label()
-	click.play()
+	#click.play()
+	coin.play()
 
 func _on_hp_pressed() -> void:
 	if player.health < player.max_health:
@@ -42,7 +45,8 @@ func _on_hp_pressed() -> void:
 
 			player.time_left -= 60
 			player.update_time_label()
-			click.play()
+			coin.play()
+			#click.play()
 
 func _on_x_pressed() -> void:
 	hide()
