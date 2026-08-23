@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 @export var time_label: Label
 
+@onready var sword_miss: AudioStreamPlayer = $SwordMiss
+@onready var sword_perfekt: AudioStreamPlayer = $SwordPerfekt
+
 @export var animationPlayer: AnimationPlayer
 @export var sword_hitbox: Area2D
 @onready var hp_bar: ColorRect = $CanvasLayer/HP_Bar
@@ -66,6 +69,7 @@ func _physics_process(delta: float) -> void:
 
 	# Angriff
 	if Input.is_action_just_pressed("attack") and attacking == false:
+		sword_miss.play()
 		attack()
 
 	move_and_slide()
