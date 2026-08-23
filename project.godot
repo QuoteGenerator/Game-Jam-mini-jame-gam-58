@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Game-Jam-mini-jame-gam-58"
-run/main_scene="uid://ddupqevaqm6my"
+run/main_scene="uid://cp16hom2vi3f8"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
 [audio]
