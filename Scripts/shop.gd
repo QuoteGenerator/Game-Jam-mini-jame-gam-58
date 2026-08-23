@@ -3,14 +3,13 @@ extends Control
 @onready var pause_menu: Control = $"../PauseMenu"
 @onready var click: AudioStreamPlayer = $Click
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@onready var player: CharacterBody2D = $"../.."
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
 func resume():
 	get_tree().paused = false
 	hide()
@@ -18,15 +17,21 @@ func resume():
 
 func _on_atk_pressed() -> void:
 	print("pressed")
+	player.damage += 10
+	player.time_left -= 60
 	click.play()
 
 
 func _on_speed_pressed() -> void:
 	print("pressed")
+	player.speed += 10
+	player.time_left -= 60
 	click.play()
 
 func _on_hp_pressed() -> void:
 	print("pressed")
+	player.health += 10
+	player.time_left -= 60
 	click.play()
 
 func _on_x_pressed() -> void:

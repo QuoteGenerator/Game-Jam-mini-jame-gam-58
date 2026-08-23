@@ -20,6 +20,8 @@ var health = 100
 var time_left = 300.0 # 5 Minuten
 var timer_running = false
 
+var damage = 10
+
 var goingDirection = "up"
 var attacking = false
 
@@ -148,7 +150,7 @@ func check_sword_hit() -> void:
 		print("Gefunden: ", body.name)
 
 		if body is slime or body is slimeKing:
-			body.health -= 10
+			body.health -= damage
 			body.hit_flash()
 
 			print("SLIME GETROFFEN! HP: ", body.health)
