@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://raf1ut0gdjai" path="res://Sprites/Player_Sprites/player_hpbar.png" id="2_o3h8g"]
 [ext_resource type="Texture2D" uid="uid://csmsoo7xpj80n" path="res://Sprites/Player_Sprites/idle_anim_down.png" id="3_gntrk"]
 [ext_resource type="Texture2D" uid="uid://c4biad8o8crfp" path="res://Sprites/Player_Sprites/idle_anim_left.png" id="4_5ixxa"]
+[ext_resource type="PackedScene" uid="uid://ykcejkk5hwej" path="res://Scenes/pause_menu.tscn" id="4_arntx"]
 [ext_resource type="Texture2D" uid="uid://c728elftex73q" path="res://Sprites/Player_Sprites/idle_anim_right.png" id="5_nn08x"]
 [ext_resource type="Texture2D" uid="uid://diwrk01o4sk35" path="res://Sprites/Player_Sprites/walk_anim_down.png" id="6_nn08x"]
 [ext_resource type="Texture2D" uid="uid://bskbttr6pfqgw" path="res://Sprites/Player_Sprites/walk_anim_up.png" id="7_52ee3"]
@@ -559,6 +560,17 @@ scale = Vector2(2.47, 2.47)
 pivot_offset = Vector2(-10.27, -11.52)
 texture = ExtResource("2_o3h8g")
 stretch_mode = 2
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=790691493 instance=ExtResource("4_arntx")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -108.999985
+offset_bottom = -108.999985
+scale = Vector2(3.09, 3.09)
 
 [node name="swordHitBox" type="Area2D" parent="." unique_id=2078082643]
 collision_layer = 0

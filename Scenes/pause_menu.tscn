@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://div38speb7p80" path="res://Sprites/Buttons/shop_down.png" id="5_ix48p"]
 [ext_resource type="Texture2D" uid="uid://dabdtidkm8qcg" path="res://Sprites/Buttons/restart_up.png" id="6_524vl"]
 [ext_resource type="Texture2D" uid="uid://dhhhheb2y20vm" path="res://Sprites/Buttons/restart_down.png" id="7_sjs17"]
+[ext_resource type="Texture2D" uid="uid://bwwvcq5842ieu" path="res://Sprites/Buttons/buttonbg.png" id="8_u8tnp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g4v7s"]
 texture = ExtResource("2_sjs17")
@@ -76,6 +77,11 @@ offset_bottom = 76.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_p1u0y")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_5s0fj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_33x8s")
+
+[node name="Buttonbg" type="Sprite2D" parent="." unique_id=2132653752]
+position = Vector2(1, 39)
+scale = Vector2(1.1419753, 1.1419753)
+texture = ExtResource("8_u8tnp")
 
 [connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Shop" to="." method="_on_shop_pressed"]
