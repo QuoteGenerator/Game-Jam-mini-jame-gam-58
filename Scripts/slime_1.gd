@@ -1,4 +1,4 @@
-class_name Slime
+class_name slimeKing
 extends CharacterBody2D
 
 @export var animationPlayer: AnimationPlayer
@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 
 var health := 20
-
+var dash:bool = false
 @export var target: CharacterBody2D
 var goingDirection := "down"
 
@@ -17,7 +17,12 @@ var is_dashing := false
 
 
 func _ready() -> void:
-	if target.kills > 40:
+	if target.kills >= 60:
+		modulate = Color.RED
+		health = 10
+		speed = 10
+	elif target.kills >= 40:
+		dash = true
 		modulate = Color.BLACK
 		health = 20
 	elif target.kills >= 25:
@@ -36,7 +41,7 @@ func _physics_process(delta: float) -> void:
 		
 	if target:
 		# Schwarzer Dash-Slime
-		if target.kills > 40:
+		if target.kills > 40 and dash == true:
 			dash_timer -= delta
 
 			if dash_timer <= 0:
