@@ -44,9 +44,9 @@ color = Color(0, 0, 0, 1)
 [node name="Restart" type="Button" parent="." unique_id=1382856516]
 z_index = 5
 layout_mode = 0
-offset_left = -30.0
+offset_left = -33.0
 offset_top = 20.0
-offset_right = 30.5
+offset_right = 27.5
 offset_bottom = 42.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_j3ryr")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_rjluv")
