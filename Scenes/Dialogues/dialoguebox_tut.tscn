@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://ywqp3esxs4jw"]
+
+[ext_resource type="Script" uid="uid://vt3i1iugqh5i" path="res://Scripts/dialoguebox_tut.gd" id="1_jc184"]
+[ext_resource type="AudioStream" uid="uid://djp1vl7oqqdif" path="res://Sounds/SFX_RetroMultiplev1.wav" id="2_434g6"]
+[ext_resource type="FontFile" uid="uid://chuhmtroqou3k" path="res://PixeloidSans (1).ttf" id="3_3xyk8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gngh"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[node name="Textbox" type="CanvasLayer" unique_id=1368686350]
+script = ExtResource("1_jc184")
+
+[node name="SfxRetroMultiplev1" type="AudioStreamPlayer" parent="." unique_id=896633466]
+stream = ExtResource("2_434g6")
+volume_db = -24.969
+bus = &"sounds"
+
+[node name="TextboxContainer" type="MarginContainer" parent="." unique_id=1881389443]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 71.0
+offset_top = -181.0
+offset_right = 69.57471
+offset_bottom = 36.540222
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.87, 0.87)
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Panel" type="Panel" parent="TextboxContainer" unique_id=1974044399]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3gngh")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextboxContainer" unique_id=1775739292]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Panel" type="Panel" parent="TextboxContainer/MarginContainer" unique_id=2044061555]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/MarginContainer" unique_id=1774408499]
+layout_mode = 2
+
+[node name="StartSymbol" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer" unique_id=541620277]
+custom_minimum_size = Vector2(7, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_3xyk8")
+theme_override_font_sizes/font_size = 34
+text = "*"
+
+[node name="Label" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer" unique_id=1733155221]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("3_3xyk8")
+theme_override_font_sizes/font_size = 34
+text = "Placeholder"
+autowrap_mode = 3
+clip_text = true
+
+[node name="EndSymbol" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer" unique_id=1284164978]
+layout_mode = 2
+size_flags_vertical = 8
+offset_transform_enabled = true
+theme_override_fonts/font = ExtResource("3_3xyk8")
+theme_override_font_sizes/font_size = 34
+text = "V"
+
+[connection signal="dialogue_tut_finished" from="." to="." method="_on_dialogue_tut_finished"]
