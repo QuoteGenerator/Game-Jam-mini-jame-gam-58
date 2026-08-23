@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bomgcwigoayj5" path="res://Sprites/FightingArea_Sprites/fighting_area.png" id="1_j0vbj"]
 [ext_resource type="Script" uid="uid://hh0765md7rlu" path="res://Scripts/fighting_area.gd" id="1_oixwp"]
 [ext_resource type="PackedScene" uid="uid://b0m5l1fmmkeb7" path="res://Scenes/Player.tscn" id="2_g6k0t"]
+[ext_resource type="AudioStream" uid="uid://jt8jb5hiq14y" path="res://Sounds/slime_death.wav" id="2_yxstt"]
 [ext_resource type="Script" uid="uid://bys071f8gcdw" path="res://Scripts/spawner.gd" id="3_g6k0t"]
 [ext_resource type="PackedScene" uid="uid://bhhm5d4lcyc8o" path="res://Scenes/slime_1.tscn" id="4_eeui5"]
 [ext_resource type="Texture2D" uid="uid://by3ni7q61m13q" path="res://Sprites/FightingArea_Sprites/tree_border_fightingarea.png" id="6_2wd46"]
@@ -27,6 +28,9 @@ size = Vector2(55.5, 11.5)
 
 [node name="FightingArea" type="Node2D" unique_id=1529102488]
 script = ExtResource("1_oixwp")
+
+[node name="SlimeDeath" type="AudioStreamPlayer" parent="." unique_id=474840358]
+stream = ExtResource("2_yxstt")
 
 [node name="FightingArea" type="Sprite2D" parent="." unique_id=225800565]
 position = Vector2(0, 1)

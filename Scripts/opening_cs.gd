@@ -18,6 +18,7 @@ extends Node2D
 @onready var s1: AnimationPlayer = $S1/AnimationPlayer
 @onready var s_1: Sprite2D = $S1
 @onready var timer_scene_switch: Timer = $TimerSceneSwitch
+@onready var funkle: AudioStreamPlayer = $Funkle
 
 var dialogue_open = false
 var dialogue2_open =false
@@ -82,6 +83,7 @@ func _on_dialogue_op_finished():
 	op_dialogue_2.show()
 	dialogue2_open = true
 	s1.play("sword_fade_in")
+	funkle.play()
 	op_dialogue_2.queue_text("Chronos: Take this magic imbued sword. It may look like any other sword, but special powers lie within.")
 	op_dialogue_2.queue_text("Chronos: If wielded correctly, those powers will come to light.")
 	op_dialogue_2.queue_text("Chronos: May time guide you.")

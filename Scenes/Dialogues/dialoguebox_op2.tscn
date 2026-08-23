@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dc2rdcmuautj7"]
 
 [ext_resource type="Script" uid="uid://d3134644r5lmj" path="res://Scripts/dialoguebox_op_2.gd" id="1_2ejeq"]
+[ext_resource type="AudioStream" uid="uid://djp1vl7oqqdif" path="res://Sounds/SFX_RetroMultiplev1.wav" id="2_p03qe"]
 [ext_resource type="FontFile" uid="uid://chuhmtroqou3k" path="res://PixeloidSans (1).ttf" id="2_thog8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gngh"]
@@ -15,6 +16,9 @@ border_color = Color(1, 1, 1, 1)
 script = ExtResource("1_2ejeq")
 
 [node name="SfxRetroMultiplev1" type="AudioStreamPlayer" parent="." unique_id=896633466]
+stream = ExtResource("2_p03qe")
+volume_db = -24.969
+bus = &"sounds"
 
 [node name="TextboxContainer" type="MarginContainer" parent="." unique_id=1881389443]
 anchors_preset = 12
@@ -77,3 +81,5 @@ offset_transform_enabled = true
 theme_override_fonts/font = ExtResource("2_thog8")
 theme_override_font_sizes/font_size = 34
 text = "V"
+
+[connection signal="dialogue_op2_finished" from="." to="." method="_on_dialogue_op_2_finished"]

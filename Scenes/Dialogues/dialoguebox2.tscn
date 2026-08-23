@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c7wr78ii6vvbd" path="res://Scripts/dialoguebox_2.gd" id="1_dhnpf"]
 [ext_resource type="FontFile" uid="uid://chuhmtroqou3k" path="res://PixeloidSans (1).ttf" id="2_feekv"]
+[ext_resource type="AudioStream" uid="uid://djp1vl7oqqdif" path="res://Sounds/SFX_RetroMultiplev1.wav" id="2_smon4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gngh"]
 bg_color = Color(0.004019165, 0.004019165, 0.004019165, 1)
@@ -15,6 +16,9 @@ border_color = Color(1, 1, 1, 1)
 script = ExtResource("1_dhnpf")
 
 [node name="SfxRetroMultiplev1" type="AudioStreamPlayer" parent="." unique_id=896633466]
+stream = ExtResource("2_smon4")
+volume_db = -24.969
+bus = &"sounds"
 
 [node name="TextboxContainer" type="MarginContainer" parent="." unique_id=1881389443]
 anchors_preset = 12

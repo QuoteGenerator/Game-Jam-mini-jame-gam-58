@@ -50,6 +50,7 @@ script = ExtResource("1_myy0f")
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=1255826335]
 stream = ExtResource("2_stj27")
 volume_db = -14.331
+bus = &"sounds"
 
 [node name="Resume" type="Button" parent="." unique_id=2111053980]
 z_index = 5

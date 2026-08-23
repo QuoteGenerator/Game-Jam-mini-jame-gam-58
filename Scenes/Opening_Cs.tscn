@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://butxd7i37b40b"]
 
 [ext_resource type="Script" uid="uid://4sq3l10y3f52" path="res://Scripts/opening_cs.gd" id="1_c63h1"]
+[ext_resource type="AudioStream" uid="uid://di33r1ucsuvx" path="res://Sounds/Funkle.mp3" id="2_5l01l"]
 [ext_resource type="PackedScene" uid="uid://cfgoyaxyv414u" path="res://Scenes/Dialogues/dialoguebox_op.tscn" id="2_7hnm2"]
 [ext_resource type="AudioStream" uid="uid://b8pljiba8eusc" path="res://Sounds/Teleport.mp3" id="2_exana"]
 [ext_resource type="Texture2D" uid="uid://dmwd33yn37tk4" path="res://Sprites/BeginArea_Sprites/starter_area.png" id="2_p1npk"]
@@ -366,15 +367,20 @@ _data = {
 [node name="Opening_cs" type="Node2D" unique_id=688634170]
 script = ExtResource("1_c63h1")
 
+[node name="Funkle" type="AudioStreamPlayer" parent="." unique_id=636590963]
+stream = ExtResource("2_5l01l")
+volume_db = -17.333
+bus = &"sounds"
+
+[node name="Teleport" type="AudioStreamPlayer" parent="." unique_id=505930262]
+stream = ExtResource("2_exana")
+volume_db = -8.804
+
 [node name="Op_dialogue" parent="." unique_id=1368686350 instance=ExtResource("2_7hnm2")]
 visible = false
 
 [node name="Op_dialogue2" parent="." unique_id=68090468 instance=ExtResource("3_32mcp")]
 visible = false
-
-[node name="Teleport" type="AudioStreamPlayer" parent="." unique_id=505930262]
-stream = ExtResource("2_exana")
-volume_db = -8.804
 
 [node name="StarterArea" type="Sprite2D" parent="." unique_id=1720700159]
 position = Vector2(6, -35)

@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var animationPlayer: AnimationPlayer
 @export var speed := 30.0
 
+
 var health := 20
 
 var target: CharacterBody2D
@@ -31,7 +32,7 @@ func _physics_process(delta: float) -> void:
 		target.kills += 1
 		queue_free()
 		return
-
+		
 	if target:
 		# Schwarzer Dash-Slime
 		if target.kills > 40:

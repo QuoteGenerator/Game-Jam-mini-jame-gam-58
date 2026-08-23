@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cjo5eb4fpg8vm" path="res://Sprites/Slime_Sprites/slime_left.png" id="1_b7awu"]
 [ext_resource type="Script" uid="uid://bgojxmrrgwqu5" path="res://Scripts/slime_1.gd" id="1_cbd27"]
 [ext_resource type="Texture2D" uid="uid://be8h3b5l6151i" path="res://Sprites/Slime_Sprites/slime_down.png" id="1_d5xvo"]
+[ext_resource type="AudioStream" uid="uid://jt8jb5hiq14y" path="res://Sounds/slime_death.wav" id="2_2pq3w"]
 [ext_resource type="Texture2D" uid="uid://bx0hb4se64rpx" path="res://Sprites/Slime_Sprites/slime_up.png" id="2_f2gu2"]
 
 [sub_resource type="Animation" id="Animation_b7awu"]
@@ -109,6 +110,10 @@ _data = {
 collision_layer = 2
 script = ExtResource("1_cbd27")
 animationPlayer = NodePath("AnimationPlayer")
+
+[node name="SlimeDeath" type="AudioStreamPlayer" parent="." unique_id=1984517003]
+stream = ExtResource("2_2pq3w")
+bus = &"sounds"
 
 [node name="slime_up" type="Sprite2D" parent="." unique_id=906782061]
 visible = false

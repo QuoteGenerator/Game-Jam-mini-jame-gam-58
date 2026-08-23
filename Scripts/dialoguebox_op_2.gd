@@ -81,5 +81,5 @@ func finish_text():
 	type_sound.stop()
 
 
-func _on_dialogue_op2_finished() -> void:
+func _on_dialogue_op_2_finished() -> void:
 	pass # Replace with function body.
