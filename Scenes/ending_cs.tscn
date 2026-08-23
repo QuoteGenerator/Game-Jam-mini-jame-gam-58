@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://rx4kgdbm0xh4"]
 
-[ext_resource type="Script" uid="uid://bn2lvdyw1tfln" path="res://Scenes/ending_cs.gd" id="1_f4upj"]
+[ext_resource type="Script" uid="uid://bn2lvdyw1tfln" path="res://Scripts/ending_cs.gd" id="1_f4upj"]
 [ext_resource type="AudioStream" uid="uid://b8pljiba8eusc" path="res://Sounds/Teleport.mp3" id="2_3uvd4"]
 [ext_resource type="PackedScene" uid="uid://bahkdi53jc6bf" path="res://Scenes/Dialogues/dialoguebox_end.tscn" id="2_5te37"]
 [ext_resource type="Texture2D" uid="uid://bomgcwigoayj5" path="res://Sprites/FightingArea_Sprites/fighting_area.png" id="3_5te37"]
@@ -307,7 +307,7 @@ position = Vector2(-73, 75)
 sprite_frames = SubResource("SpriteFrames_yf5fn")
 animation = &"tweak"
 autoplay = "up"
-frame_progress = 0.7449674
+frame_progress = 0.9852788
 
 [node name="CrownSprite" type="Sprite2D" parent="." unique_id=363291732]
 position = Vector2(-58, 27)
@@ -338,7 +338,7 @@ position = Vector2(10, 74)
 sprite_frames = SubResource("SpriteFrames_f4upj")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.21898189
+frame_progress = 0.07940249
 
 [node name="TimerDialogueStart" type="Timer" parent="." unique_id=601824617]
 wait_time = 2.0

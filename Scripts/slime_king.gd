@@ -24,6 +24,7 @@ func _process(delta: float) -> void:
 	if health <= 0:	
 		Music.stop()
 		queue_free()
+		get_tree().call_deferred("change_scene_to_file", "res://Scenes/ending_cs.tscn")
 		
 	spawnTimer -= delta
 	
