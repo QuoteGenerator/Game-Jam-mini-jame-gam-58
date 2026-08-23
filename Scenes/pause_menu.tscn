@@ -5,10 +5,13 @@
 [ext_resource type="AudioStream" uid="uid://mvbxxjmnk74f" path="res://Sounds/click.wav" id="2_stj27"]
 [ext_resource type="Texture2D" uid="uid://cqnq4aq3fdj4n" path="res://Sprites/Buttons/resume_down.png" id="3_u8tnp"]
 [ext_resource type="Texture2D" uid="uid://bqwcvk4qrknsr" path="res://Sprites/Buttons/shop_up.png" id="4_stj27"]
+[ext_resource type="Texture2D" uid="uid://cdn07alduqflh" path="res://Sprites/Buttons/resume_hover.png" id="5_0fi7f"]
 [ext_resource type="Texture2D" uid="uid://div38speb7p80" path="res://Sprites/Buttons/shop_down.png" id="5_ix48p"]
 [ext_resource type="Texture2D" uid="uid://dabdtidkm8qcg" path="res://Sprites/Buttons/restart_up.png" id="6_524vl"]
 [ext_resource type="Texture2D" uid="uid://dhhhheb2y20vm" path="res://Sprites/Buttons/restart_down.png" id="7_sjs17"]
 [ext_resource type="Texture2D" uid="uid://bwwvcq5842ieu" path="res://Sprites/Buttons/buttonbg.png" id="8_u8tnp"]
+[ext_resource type="Texture2D" uid="uid://bcoimcwqvjmhs" path="res://Sprites/Buttons/shop_hover.png" id="8_uscpe"]
+[ext_resource type="Texture2D" uid="uid://c38pqsqm5lyhd" path="res://Sprites/Buttons/restart_hover.png" id="11_taale"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g4v7s"]
 texture = ExtResource("2_sjs17")
@@ -17,7 +20,7 @@ texture = ExtResource("2_sjs17")
 texture = ExtResource("3_u8tnp")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_57qmd"]
-texture = ExtResource("2_sjs17")
+texture = ExtResource("5_0fi7f")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d0u6y"]
 texture = ExtResource("4_stj27")
@@ -26,7 +29,7 @@ texture = ExtResource("4_stj27")
 texture = ExtResource("5_ix48p")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7numd"]
-texture = ExtResource("4_stj27")
+texture = ExtResource("8_uscpe")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p1u0y"]
 texture = ExtResource("6_524vl")
@@ -35,7 +38,7 @@ texture = ExtResource("6_524vl")
 texture = ExtResource("7_sjs17")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_33x8s"]
-texture = ExtResource("6_524vl")
+texture = ExtResource("11_taale")
 
 [node name="PauseMenu" type="Control" unique_id=790691493]
 process_mode = 3
