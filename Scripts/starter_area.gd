@@ -120,7 +120,7 @@ func _on_scene_switch_body_entered(body: Node2D) -> void:
 	if body.name != "Player":
 		return
 	
-	get_tree().call_deferred("change_scene_to_file", "res://Scenes/fighting_area.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/fa_transition.tscn")
 	#get_tree().change_scene_to_file("res://Scenes/fighting_area.tscn")
 
 

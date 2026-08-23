@@ -1,0 +1,273 @@
+[gd_scene format=3 uid="uid://bx1k6samkck7w"]
+
+[ext_resource type="Script" uid="uid://dlutnbqu4jord" path="res://Scenes/fa_transition.gd" id="1_iysnx"]
+[ext_resource type="Texture2D" uid="uid://bomgcwigoayj5" path="res://Sprites/FightingArea_Sprites/fighting_area.png" id="3_6au4w"]
+[ext_resource type="Texture2D" uid="uid://bvnran3t5wobq" path="res://Sprites/Player_Sprites/idle_anim_up.png" id="4_hxp6n"]
+[ext_resource type="PackedScene" uid="uid://b0m5l1fmmkeb7" path="res://Scenes/Player.tscn" id="4_th0jh"]
+[ext_resource type="Texture2D" uid="uid://bskbttr6pfqgw" path="res://Sprites/Player_Sprites/walk_anim_up.png" id="5_ttkn1"]
+[ext_resource type="FontFile" uid="uid://chuhmtroqou3k" path="res://PixeloidSans (1).ttf" id="7_6au4w"]
+[ext_resource type="Texture2D" uid="uid://by3ni7q61m13q" path="res://Sprites/FightingArea_Sprites/tree_border_fightingarea.png" id="7_lp7s8"]
+[ext_resource type="Texture2D" uid="uid://raf1ut0gdjai" path="res://Sprites/Player_Sprites/player_hpbar.png" id="8_th0jh"]
+[ext_resource type="PackedScene" uid="uid://ykcejkk5hwej" path="res://Scenes/pause_menu.tscn" id="9_sv4cb"]
+
+[sub_resource type="Curve2D" id="Curve2D_hxp6n"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 497, 0, 0, 0, 0, -1, 426)
+}
+point_count = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7havs"]
+atlas = ExtResource("4_hxp6n")
+region = Rect2(0, 0, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1oy8"]
+atlas = ExtResource("4_hxp6n")
+region = Rect2(16, 0, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6au4w"]
+atlas = ExtResource("5_ttkn1")
+region = Rect2(0, 0, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv4cb"]
+atlas = ExtResource("5_ttkn1")
+region = Rect2(32, 0, 16, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7havs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1oy8")
+}],
+"loop": 1,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6au4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sv4cb")
+}],
+"loop": 1,
+"name": &"run_up",
+"speed": 6.0
+}]
+
+[sub_resource type="Animation" id="Animation_1iu4k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m0x7a"]
+resource_name = "fade_in"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j52sy"]
+_data = {
+&"RESET": SubResource("Animation_1iu4k"),
+&"fade_in": SubResource("Animation_m0x7a")
+}
+
+[sub_resource type="Animation" id="Animation_x63xi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.9529412, 0.3254902, 0.26666668, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_i2e8t"]
+resource_name = "fade_in"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.9529412, 0.3254902, 0.26666668, 0), Color(0.9529412, 0.3254902, 0.26666668, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lp7s8"]
+_data = {
+&"RESET": SubResource("Animation_x63xi"),
+&"fade_in": SubResource("Animation_i2e8t")
+}
+
+[sub_resource type="Animation" id="Animation_5v66d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qidb7"]
+resource_name = "fade_in"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aqhox"]
+_data = {
+&"RESET": SubResource("Animation_5v66d"),
+&"fade_in": SubResource("Animation_qidb7")
+}
+
+[node name="fa_transition" type="Node2D" unique_id=1529102488]
+script = ExtResource("1_iysnx")
+
+[node name="FightingArea" type="Sprite2D" parent="." unique_id=225800565]
+position = Vector2(0, 1)
+texture = ExtResource("3_6au4w")
+
+[node name="TreeBorderFightingarea" type="Sprite2D" parent="." unique_id=2058758622]
+z_index = 237
+position = Vector2(0, 1)
+texture = ExtResource("7_lp7s8")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1071778044]
+position = Vector2(1, -4)
+curve = SubResource("Curve2D_hxp6n")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=97588305]
+position = Vector2(-1, 497)
+rotation = -1.5707964
+loop = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D" unique_id=816482159]
+position = Vector2(3, 1.0000001)
+rotation = 1.5707964
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"idle_up"
+autoplay = "run_up"
+frame_progress = 0.07526866
+
+[node name="Camera" type="Camera2D" parent="Path2D/PathFollow2D/AnimatedSprite2D" unique_id=480596617]
+position = Vector2(4, 1.7484854e-07)
+rotation = 1.5707964
+zoom = Vector2(3, 3)
+limit_left = -500
+limit_top = -520
+limit_right = 500
+limit_bottom = 525
+
+[node name="Player" parent="Path2D/PathFollow2D" unique_id=525732701 instance=ExtResource("4_th0jh")]
+visible = false
+position = Vector2(4, 1.7484558e-07)
+rotation = 1.5707964
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Path2D/PathFollow2D/Player" unique_id=1478475509]
+
+[node name="Label" type="Label" parent="Path2D/PathFollow2D/Player/CanvasLayer2" unique_id=1966576495]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -232.0
+offset_right = -32.0
+offset_bottom = 23.0
+grow_horizontal = 2
+scale = Vector2(2.29, 2.29)
+pivot_offset_ratio = Vector2(0, -0.465)
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_fonts/font = ExtResource("7_6au4w")
+text = "Time: 5:00:00"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D/PathFollow2D/Player/CanvasLayer2/Label" unique_id=1519843880]
+libraries/ = SubResource("AnimationLibrary_j52sy")
+
+[node name="HP_Bar" type="ColorRect" parent="Path2D/PathFollow2D/Player/CanvasLayer2" unique_id=1008521777]
+offset_left = 26.999998
+offset_top = 19.999998
+offset_right = 67.0
+offset_bottom = 60.0
+scale = Vector2(9.851078, 0.83556306)
+color = Color(0.9529412, 0.3254902, 0.26666668, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D/PathFollow2D/Player/CanvasLayer2/HP_Bar" unique_id=1405573392]
+libraries/ = SubResource("AnimationLibrary_lp7s8")
+
+[node name="HP_Overlay" type="TextureRect" parent="Path2D/PathFollow2D/Player/CanvasLayer2" unique_id=1266871383]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 170.0
+offset_bottom = 16.0
+scale = Vector2(2.47, 2.47)
+pivot_offset = Vector2(-10.27, -11.52)
+texture = ExtResource("8_th0jh")
+stretch_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D/PathFollow2D/Player/CanvasLayer2/HP_Overlay" unique_id=1551369083]
+libraries/ = SubResource("AnimationLibrary_aqhox")
+
+[node name="PauseMenu" parent="Path2D/PathFollow2D/Player/CanvasLayer2" unique_id=790691493 instance=ExtResource("9_sv4cb")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -108.999985
+offset_bottom = -108.999985
+scale = Vector2(3.09, 3.09)
+
+[node name="Timer" type="Timer" parent="." unique_id=991301738]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
