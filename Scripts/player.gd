@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 @onready var sword_miss: AudioStreamPlayer = $SwordMiss
 @onready var sword_perfekt: AudioStreamPlayer = $SwordPerfekt
+@onready var damage_taken: AudioStreamPlayer = $DamageTaken
 
 @export var animationPlayer: AnimationPlayer
 @export var sword_hitbox: Area2D
@@ -81,6 +82,7 @@ func _physics_process(delta: float) -> void:
 
 		if collider is Slime and can_take_damage:
 			take_damage(10)
+			damage_taken.play()
 
 	# Animation nur wenn wir nicht angreifen
 	update_animation()
