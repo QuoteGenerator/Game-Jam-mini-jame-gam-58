@@ -675,12 +675,12 @@ shape = SubResource("CircleShape2D_yf5fn")
 [node name="Visuals" type="Node2D" parent="." unique_id=1856464462]
 
 [node name="idle_down" type="Sprite2D" parent="Visuals" unique_id=117793975]
+visible = false
 texture = ExtResource("3_gntrk")
 region_enabled = true
 region_rect = Rect2(0, 0, 16, 35)
 
 [node name="idle_up" type="Sprite2D" parent="Visuals" unique_id=1007424343]
-visible = false
 position = Vector2(1.5, 1)
 scale = Vector2(1, 0.99999994)
 texture = ExtResource("2_gntrk")
