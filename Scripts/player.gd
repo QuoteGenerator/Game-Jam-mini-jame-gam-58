@@ -19,7 +19,7 @@ var health = 100
 var time_left = 300.0 # 5 Minuten
 var timer_running = false
 
-var goingDirection = "down"
+var goingDirection = "up"
 var attacking = false
 
 var kills = 0
