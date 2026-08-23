@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://bb077x7gvpf8y"]
+
+[ext_resource type="Script" uid="uid://11g40g3jrxy1" path="res://Scenes/game_over.gd" id="1_14u15"]
+[ext_resource type="Texture2D" uid="uid://dabdtidkm8qcg" path="res://Sprites/Buttons/restart_up.png" id="1_ek8ke"]
+[ext_resource type="Texture2D" uid="uid://dhhhheb2y20vm" path="res://Sprites/Buttons/restart_down.png" id="2_eoghk"]
+[ext_resource type="AudioStream" uid="uid://mvbxxjmnk74f" path="res://Sounds/click.wav" id="2_j3ryr"]
+[ext_resource type="AudioStream" uid="uid://margejf0k6a4" path="res://Sounds/Church_Bell.mp3" id="2_rjluv"]
+[ext_resource type="FontFile" uid="uid://chuhmtroqou3k" path="res://PixeloidSans (1).ttf" id="3_14u15"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j3ryr"]
+texture = ExtResource("1_ek8ke")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rjluv"]
+texture = ExtResource("2_eoghk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gjtdd"]
+texture = ExtResource("1_ek8ke")
+
+[node name="Game_Over" type="Control" unique_id=34271020]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_14u15")
+
+[node name="ChurchBell" type="AudioStreamPlayer" parent="." unique_id=1933948305]
+stream = ExtResource("2_rjluv")
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1413494278]
+stream = ExtResource("2_j3ryr")
+volume_db = -14.331
+bus = &"sounds"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=486211133]
+layout_mode = 0
+offset_left = -324.0
+offset_top = -174.0
+offset_right = 369.0
+offset_bottom = 268.0
+color = Color(0, 0, 0, 1)
+
+[node name="Restart" type="Button" parent="." unique_id=1382856516]
+z_index = 5
+layout_mode = 0
+offset_left = -30.0
+offset_top = 20.0
+offset_right = 30.5
+offset_bottom = 42.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_j3ryr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rjluv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gjtdd")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1027602004]
+position = Vector2(1, 0)
+zoom = Vector2(4.465, 4.465)
+limit_left = -500
+limit_top = -520
+limit_right = 500
+limit_bottom = 525
+
+[node name="Label" type="Label" parent="." unique_id=1158868208]
+layout_mode = 0
+offset_left = -79.0
+offset_top = -35.0
+offset_right = 80.0
+offset_bottom = -3.0
+theme_override_fonts/font = ExtResource("3_14u15")
+theme_override_font_sizes/font_size = 26
+text = "GAME OVER!"
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

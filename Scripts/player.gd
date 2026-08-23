@@ -41,7 +41,7 @@ func _process(delta: float) -> void:
 	if timer_running:
 		time_left -= delta
 	if health <= 0 or time_left <= 0:
-		get_tree().change_scene_to_file("res://Scenes/fighting_area.tscn")
+		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 	
 	update_time_label()
 
