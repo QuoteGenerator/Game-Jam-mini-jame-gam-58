@@ -1,6 +1,7 @@
 extends Control
 
 @onready var click: AudioStreamPlayer = $Click
+@onready var shop: Control = $"../Shop"
 
 func _process(delta):
 	testESC()
@@ -12,13 +13,14 @@ func resume():
 func pause ():
 	get_tree().paused = true
 	show()
+	print("showing")
 	
 func testESC():
 	if Input.is_action_just_pressed("Pause") and !get_tree().paused:
 		pause()
 	
-	elif Input.is_action_just_pressed("Pause") and get_tree().paused:
-		resume()
+	#elif Input.is_action_just_pressed("Pause") and get_tree().paused:
+	#	resume()
 
 func _on_resume_pressed() -> void:
 	click.play()
@@ -27,6 +29,8 @@ func _on_resume_pressed() -> void:
 
 func _on_shop_pressed() -> void:
 	click.play()
+	hide()
+	shop.show()
 	print("pressed")
 
 func _on_restart_pressed() -> void:
