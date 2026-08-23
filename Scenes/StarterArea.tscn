@@ -84,11 +84,15 @@ texture = ExtResource("2_y8dyj")
 
 [node name="Rock1" parent="." unique_id=162347175 instance=ExtResource("3_vxmu0")]
 position = Vector2(-149, -64)
+collision_layer = 3855
+collision_mask = 3855
 
 [node name="Rock2" parent="." unique_id=1324639926 instance=ExtResource("3_vxmu0")]
 position = Vector2(140, 19)
 rotation = 3.1415927
 scale = Vector2(1, -1)
+collision_layer = 3855
+collision_mask = 3855
 
 [node name="Rock3" parent="." unique_id=1028718431 instance=ExtResource("3_vxmu0")]
 position = Vector2(149, -157)
@@ -99,6 +103,8 @@ scale = Vector2(1, -1)
 position = Vector2(148, -159)
 
 [node name="NPC3_Range" type="Area2D" parent="NPC3" unique_id=182933505]
+collision_layer = 3855
+collision_mask = 3855
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC3/NPC3_Range" unique_id=28428357]
 shape = SubResource("CircleShape2D_g4v7s")
@@ -107,6 +113,8 @@ shape = SubResource("CircleShape2D_g4v7s")
 position = Vector2(-40, -200)
 
 [node name="NPC2_Range" type="Area2D" parent="NPC2" unique_id=93381798]
+collision_layer = 3855
+collision_mask = 3855
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC2/NPC2_Range" unique_id=1188589364]
 position = Vector2(0, 3)
@@ -116,6 +124,8 @@ shape = SubResource("CircleShape2D_g4v7s")
 position = Vector2(-119, -37)
 
 [node name="NPC1_Range" type="Area2D" parent="NPC1" unique_id=1502319896]
+collision_layer = 3855
+collision_mask = 3855
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC1/NPC1_Range" unique_id=12584431]
 shape = SubResource("CircleShape2D_g4v7s")
@@ -140,6 +150,8 @@ position = Vector2(6, -244)
 shape = SubResource("RectangleShape2D_fcnqv")
 
 [node name="Collisions" type="StaticBody2D" parent="." unique_id=1816406391]
+collision_layer = 3855
+collision_mask = 3855
 
 [node name="Left" type="CollisionShape2D" parent="Collisions" unique_id=2076435089]
 position = Vector2(-216, -37)
