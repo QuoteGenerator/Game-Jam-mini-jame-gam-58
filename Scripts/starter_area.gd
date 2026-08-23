@@ -20,6 +20,7 @@ var npc3_entered = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Music.play("starter_area")
 	fade.play("fade_out")
 	fade_timer.start()
 	player.set_physics_process(false)

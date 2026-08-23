@@ -12,6 +12,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	fade_screen.hide()
+	Music.play("menu")
 
 func _on_start_pressed() -> void:
 	#button_type = "start"
@@ -20,6 +21,7 @@ func _on_start_pressed() -> void:
 	start.hide()
 	fade.play("fade_in")
 	timer.start()
+	Music.stop()
 	
 func _on_timer_timeout() -> void:
 	blackscreen.show()
