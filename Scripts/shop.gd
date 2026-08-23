@@ -29,10 +29,17 @@ func _on_speed_pressed() -> void:
 	click.play()
 
 func _on_hp_pressed() -> void:
-	print("pressed")
-	player.health += 10
-	player.time_left -= 60
-	click.play()
+	if player.health < player.max_health:
+			print("pressed")
+
+			player.health = min(player.health + 10, player.max_health)
+
+			player.hp_bar.scale.x = player.max_hp_scale_x * (
+				float(player.health) / player.max_health
+			)
+
+			player.time_left -= 60
+			click.play()
 
 func _on_x_pressed() -> void:
 	hide()
