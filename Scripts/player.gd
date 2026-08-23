@@ -32,8 +32,8 @@ var can_take_damage = true
 
 
 func _ready() -> void:
-	# SwordHitbox ist am Anfang aus
-	#time_label.hide()
+	add_to_group("player")
+	
 	sword_hitbox.monitoring = false
 	max_hp_scale_x = hp_bar.scale.x
 
@@ -146,7 +146,7 @@ func check_sword_hit() -> void:
 	for body in bodies:
 		print("Gefunden: ", body.name)
 
-		if body is Slime:
+		if body is Slime or body is slimeKing:
 			body.health -= 10
 			body.hit_flash()
 

@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var slime_scene: PackedScene
+@export var slimeking_scene: PackedScene
 @export var spawn_interval = 3.0
 @export var map_size = Vector2(500, 500)
 
@@ -13,6 +14,8 @@ func _ready():
 
 func _process(delta: float) -> void:
 	if player.kills > 60:
+		get_parent().add_child(slimeking_scene.instantiate())
+		queue_free()
 		return
 		
 	
