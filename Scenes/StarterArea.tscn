@@ -202,7 +202,6 @@ visible = false
 visible = false
 
 [node name="Fade" type="ColorRect" parent="." unique_id=1114470714]
-visible = false
 z_index = 5
 offset_left = -381.0
 offset_top = -402.0
