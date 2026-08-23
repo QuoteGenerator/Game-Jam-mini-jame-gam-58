@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bx1k6samkck7w"]
 
-[ext_resource type="Script" uid="uid://dlutnbqu4jord" path="res://Scenes/fa_transition.gd" id="1_iysnx"]
+[ext_resource type="Script" uid="uid://dlutnbqu4jord" path="res://Scripts/fa_transition.gd" id="1_iysnx"]
 [ext_resource type="Texture2D" uid="uid://bomgcwigoayj5" path="res://Sprites/FightingArea_Sprites/fighting_area.png" id="3_6au4w"]
 [ext_resource type="Texture2D" uid="uid://bvnran3t5wobq" path="res://Sprites/Player_Sprites/idle_anim_up.png" id="4_hxp6n"]
 [ext_resource type="PackedScene" uid="uid://b0m5l1fmmkeb7" path="res://Scenes/Player.tscn" id="4_th0jh"]
