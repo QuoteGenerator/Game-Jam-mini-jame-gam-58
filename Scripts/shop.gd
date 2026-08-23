@@ -19,6 +19,7 @@ func _on_atk_pressed() -> void:
 	print("pressed")
 	player.damage += 10
 	player.time_left -= 60
+	player.update_time_label()
 	click.play()
 
 
@@ -26,6 +27,7 @@ func _on_speed_pressed() -> void:
 	print("pressed")
 	player.speed += 10
 	player.time_left -= 60
+	player.update_time_label()
 	click.play()
 
 func _on_hp_pressed() -> void:
@@ -39,6 +41,7 @@ func _on_hp_pressed() -> void:
 			)
 
 			player.time_left -= 60
+			player.update_time_label()
 			click.play()
 
 func _on_x_pressed() -> void:
