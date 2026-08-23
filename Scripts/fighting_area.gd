@@ -5,8 +5,10 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#player.time_label.show()
+	player.time_label.show()
 	player.timer_running = true
+	player.hp_bar.show()
+	player.hp_overlay.show()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

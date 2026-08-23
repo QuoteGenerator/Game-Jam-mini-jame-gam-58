@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var animationPlayer: AnimationPlayer
 @export var sword_hitbox: Area2D
 @onready var hp_bar: ColorRect = $CanvasLayer/HP_Bar
+@onready var hp_overlay: TextureRect = $CanvasLayer/HP_Overlay
 
 var max_hp_scale_x: float
 
