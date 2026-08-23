@@ -1,0 +1,208 @@
+[gd_scene format=3 uid="uid://rx4kgdbm0xh4"]
+
+[ext_resource type="Script" uid="uid://hh0765md7rlu" path="res://Scripts/fighting_area.gd" id="1_f4upj"]
+[ext_resource type="AudioStream" uid="uid://jt8jb5hiq14y" path="res://Sounds/slime_death.wav" id="2_3uvd4"]
+[ext_resource type="Texture2D" uid="uid://bomgcwigoayj5" path="res://Sprites/FightingArea_Sprites/fighting_area.png" id="3_5te37"]
+[ext_resource type="PackedScene" uid="uid://b0m5l1fmmkeb7" path="res://Scenes/Player.tscn" id="4_yimas"]
+[ext_resource type="Texture2D" uid="uid://c728elftex73q" path="res://Sprites/Player_Sprites/idle_anim_right.png" id="6_f4upj"]
+[ext_resource type="Texture2D" uid="uid://bvnran3t5wobq" path="res://Sprites/Player_Sprites/idle_anim_up.png" id="7_3uvd4"]
+[ext_resource type="Texture2D" uid="uid://by3ni7q61m13q" path="res://Sprites/FightingArea_Sprites/tree_border_fightingarea.png" id="8_4oefe"]
+[ext_resource type="Texture2D" uid="uid://cg1c6py2rxyxf" path="res://Sprites/crown_sprite.png" id="8_5te37"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
+radius = 34.0
+height = 1064.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf5fn"]
+radius = 45.0
+height = 1014.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_57qmd"]
+radius = 18.0
+height = 480.00006
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d0u6y"]
+height = 94.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(55.5, 11.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yimas"]
+atlas = ExtResource("6_f4upj")
+region = Rect2(0, 0, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eymyx"]
+atlas = ExtResource("6_f4upj")
+region = Rect2(16, 0, 16, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gk7et"]
+atlas = ExtResource("7_3uvd4")
+region = Rect2(0, 0, 16, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_302io"]
+atlas = ExtResource("7_3uvd4")
+region = Rect2(16, 0, 16, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yimas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eymyx")
+}],
+"loop": 1,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gk7et")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_302io")
+}],
+"loop": 1,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_f4upj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3uvd4"]
+resource_name = "fade_in"
+length = 0.19999999999999998
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5te37"]
+resource_name = "fade_out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5te37"]
+_data = {
+&"RESET": SubResource("Animation_f4upj"),
+&"fade_in": SubResource("Animation_3uvd4"),
+&"fade_out": SubResource("Animation_5te37")
+}
+
+[node name="FightingArea" type="Node2D" unique_id=1529102488]
+script = ExtResource("1_f4upj")
+
+[node name="SlimeDeath" type="AudioStreamPlayer" parent="." unique_id=474840358]
+stream = ExtResource("2_3uvd4")
+
+[node name="FightingArea" type="Sprite2D" parent="." unique_id=225800565]
+position = Vector2(0, 1)
+texture = ExtResource("3_5te37")
+
+[node name="Player" parent="." unique_id=525732701 instance=ExtResource("4_yimas")]
+position = Vector2(-33, 79)
+
+[node name="Camera" type="Camera2D" parent="Player" unique_id=480596617]
+zoom = Vector2(3, 3)
+limit_left = -500
+limit_top = -520
+limit_right = 500
+limit_bottom = 525
+
+[node name="Boundaries" type="StaticBody2D" parent="." unique_id=208472465]
+collision_layer = 2
+
+[node name="Left" type="CollisionShape2D" parent="Boundaries" unique_id=1779516587]
+position = Vector2(-483, 0)
+shape = SubResource("CapsuleShape2D_g4v7s")
+
+[node name="Right" type="CollisionShape2D" parent="Boundaries" unique_id=1515066493]
+position = Vector2(482, 0)
+shape = SubResource("CapsuleShape2D_g4v7s")
+
+[node name="Top" type="CollisionShape2D" parent="Boundaries" unique_id=364470099]
+position = Vector2(15, -488)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_yf5fn")
+
+[node name="Bottom_Left" type="CollisionShape2D" parent="Boundaries" unique_id=1845704818]
+position = Vector2(-270, 466)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_57qmd")
+
+[node name="Bottom_Right" type="CollisionShape2D" parent="Boundaries" unique_id=1327526920]
+position = Vector2(266, 466)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_57qmd")
+
+[node name="Bottom_Left_Side" type="CollisionShape2D" parent="Boundaries" unique_id=94580493]
+position = Vector2(-41, 502)
+shape = SubResource("CapsuleShape2D_d0u6y")
+
+[node name="Bottom_Right_Side" type="CollisionShape2D" parent="Boundaries" unique_id=526344009]
+position = Vector2(37, 502)
+shape = SubResource("CapsuleShape2D_d0u6y")
+
+[node name="Bottom_Middle" type="CollisionShape2D" parent="Boundaries" unique_id=1631115676]
+position = Vector2(-1.75, 509)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="TreeBorderFightingarea" type="Sprite2D" parent="." unique_id=2058758622]
+z_index = 237
+position = Vector2(0, 1)
+texture = ExtResource("8_4oefe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1056562637]
+position = Vector2(-58, 73)
+sprite_frames = SubResource("SpriteFrames_yf5fn")
+animation = &"up"
+autoplay = "up"
+frame_progress = 0.5004905
+
+[node name="CrownSprite" type="Sprite2D" parent="." unique_id=363291732]
+position = Vector2(-58, 27)
+texture = ExtResource("8_5te37")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=3528670]
+z_index = 2
+offset_left = -338.0
+offset_top = -88.0
+offset_right = 334.0
+offset_bottom = 272.0
+color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=2060705628]
+libraries/ = SubResource("AnimationLibrary_5te37")
