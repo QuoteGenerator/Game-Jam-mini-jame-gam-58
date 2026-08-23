@@ -17,6 +17,7 @@ var triangleAttackUsed = 0
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
+	Music.play("boss")
 
 func _process(delta: float) -> void:
 	
