@@ -29,10 +29,11 @@ func _on_speed_pressed() -> void:
 	click.play()
 
 func _on_hp_pressed() -> void:
-	print("pressed")
-	player.health += 10
-	player.time_left -= 60
-	click.play()
+	if player.health <= 90:
+		print("pressed")
+		player.health += 10
+		player.time_left -= 60
+		click.play()
 
 func _on_x_pressed() -> void:
 	hide()
